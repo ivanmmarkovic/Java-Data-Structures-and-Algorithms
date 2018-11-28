@@ -127,6 +127,33 @@ public class LinkedList {
 				previous = tmp;
 			}
 		}
-}
+	}
+	public void insertAfter(int listElement, int newElement) {
+		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
+			if(tmp.info == listElement) {
+				if(tmp == this.tail)
+					this.addToTail(newElement);
+				else {
+					Node newNode = new Node(newElement, tmp.next);
+					tmp.next = newNode;
+				}
+				tmp = tmp.next;
+			}
+		}
+	}
+	public void insertBefore(int listElement, int newElement) {
+		Node prev = null;
+		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
+			if(tmp.info == listElement) {
+				if(tmp == this.head)
+					this.addToHead(newElement);
+				else {
+					Node newNode = new Node(newElement, tmp);
+					prev.next = newNode;
+				}
+			}
+			prev = tmp;
+		}
+	}
 }
 
