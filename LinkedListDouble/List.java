@@ -96,6 +96,7 @@ public class List {
 					current = current.next;
 				}
 				current.prev.next = current.next;
+				current.next.prev = current.prev
 			}
 		}
 	}
