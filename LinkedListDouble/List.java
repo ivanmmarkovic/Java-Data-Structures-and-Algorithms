@@ -109,7 +109,7 @@ public class List {
 					this.deleteFromTail();
 				else {
 					tmp.prev.next = tmp.next;
-					tmp = tmp.prev;
+					tmp.next.prev = tmp.prev
 				}
 			}
 		}
