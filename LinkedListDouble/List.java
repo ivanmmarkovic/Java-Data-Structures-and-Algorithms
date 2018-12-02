@@ -111,6 +111,7 @@ public class List {
 					tmp.prev.next = tmp.next;
 					tmp.next.prev = tmp.prev
 				}
+				tmp = tmp.prev;
 			}
 		}
 	}
