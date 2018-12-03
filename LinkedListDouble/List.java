@@ -110,8 +110,9 @@ public class List {
 				else {
 					tmp.prev.next = tmp.next;
 					tmp.next.prev = tmp.prev;
+					tmp = tmp.prev;
 				}
-				tmp = tmp.prev;
+				
 			}
 		}
 	}
