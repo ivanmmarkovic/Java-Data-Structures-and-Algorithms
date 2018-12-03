@@ -48,7 +48,7 @@ public class List {
 			}
 		}
 	}
-	public Integer deleteFromTail() {
+;	public Integer deleteFromTail() {
 		if(this.isEmpty())
 			return null;
 		else {
@@ -96,7 +96,7 @@ public class List {
 					current = current.next;
 				}
 				current.prev.next = current.next;
-				current.next.prev = current.prev
+				current.next.prev = current.prev;
 			}
 		}
 	}
@@ -109,7 +109,7 @@ public class List {
 					this.deleteFromTail();
 				else {
 					tmp.prev.next = tmp.next;
-					tmp.next.prev = tmp.prev
+					tmp.next.prev = tmp.prev;
 				}
 				tmp = tmp.prev;
 			}
