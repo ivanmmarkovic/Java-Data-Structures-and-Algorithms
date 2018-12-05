@@ -1,2 +1,2 @@
-
-sorting
+* check deleteNodesWithValues - looks like there is a error
+* sorting
