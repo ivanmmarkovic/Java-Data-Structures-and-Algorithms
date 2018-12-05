@@ -108,7 +108,7 @@ public class List {
 			for(Node tmp = this.head.next; tmp != this.head; tmp = tmp.next) {
 				if(tmp.info == value) {
 					prev.next = tmp.next;
-					tmp = prev;
+					//tmp = prev;
 				}
 				else
 					prev = prev.next;
