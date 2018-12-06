@@ -34,7 +34,7 @@ public class List {
 	}
 	public void deleteFromHead() {
 		if(this.isEmpty())
-			System.out.println("Lista je prazna");
+			System.out.println("List is empty");
 		else {
 			if(this.head == this.tail)
 				this.head = this.tail = null;
@@ -45,7 +45,7 @@ public class List {
 	}
 	public void deleteFromTail() {
 		if(this.isEmpty())
-			System.out.println("Lista je prazna");
+			System.out.println("List is empty");
 		else {
 			if(this.head == this.tail)
 				this.head = this.tail = null;
