@@ -1,2 +1,3 @@
 * check deleteNodesWithValues - looks like there is a error
+* insertAfter, insertBefore
 * sorting
