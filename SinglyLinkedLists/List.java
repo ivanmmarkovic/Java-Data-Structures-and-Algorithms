@@ -5,13 +5,13 @@ public class List {
 	public List() {
 		this.head = this.tail = null;
 	}
-	public void printAll() {
-		for(Node tmp = this.head; tmp != null; tmp = tmp.next)
-			System.out.print(tmp.info + ", ");
-		System.out.println();
-	}
 	public boolean isEmpty() {
 		return this.head == null;
+	}
+	public void printAll() {
+		for(Node tmp =this.head; tmp != null; tmp = tmp.next)
+			System.out.print(tmp.info);
+		System.out.println();
 	}
 	public int numberOfElements() {
 		int count = 0;
@@ -30,30 +30,84 @@ public class List {
 		else {
 			this.tail.next = new Node(i);
 			this.tail = this.tail.next;
-		}
+		}	
 	}
-	public void deleteFromHead() {
+	public Integer deleteFromHead() {
 		if(this.isEmpty())
-			System.out.println("List is empty");
+			return null;
 		else {
+			Integer retvalue = this.head.info;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
+				Node toDelete = this.head;
 				this.head = this.head.next;
+				toDelete = null;
 			}
+			return retvalue;
 		}
 	}
-	public void deleteFromTail() {
+	public Integer deleteFromTail() {
 		if(this.isEmpty())
-			System.out.println("List is empty");
+			return null;
 		else {
+			Integer retvalue = this.tail.info;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
 				Node tmp;
 				for(tmp = this.head; tmp.next != this.tail; tmp = tmp.next);
+				Node toDelete = this.tail;
 				tmp.next = null;
 				this.tail = tmp;
+				toDelete = null;
+			}
+			return retvalue;
+		}
+	}
+	public void deleteNodesWithValue(int val) {
+		if(this.isEmpty())
+			System.out.println("List is empty");
+		else if(this.head != this.tail) {
+			Node currentNode = this.head;
+			while(currentNode.next != null)
+				if(currentNode.next.info == val) {
+					Node toDelete = currentNode.next;
+					if(currentNode.next.next == null)
+						currentNode.next = null;
+					else
+						currentNode.next = currentNode.next.next;
+					toDelete = null;
+				}
+				else
+					currentNode = currentNode.next;
+			this.tail = currentNode;				
+		}
+		if(this.head.info == val)
+			this.deleteFromHead();
+	}
+	public void deleteOnIndex(int index) {
+		int size = this.numberOfElements();
+		if(this.isEmpty())
+			System.out.println("List is empty");
+		else if(index < 0 || index > size - 1){
+			System.out.println("Index out of bounds");
+		}
+		else {
+			if(index == 0)
+				this.deleteFromHead();
+			else if(index == size - 1)
+				this.deleteFromTail();
+			else {
+				int count = 0;
+				Node prev = null, tmp = this.head;
+				while(count < index) {
+					count++;
+					prev = tmp;
+					tmp = tmp.next;
+				}
+				prev.next = tmp.next;
+				tmp = null;
 			}
 		}
 	}
@@ -61,7 +115,7 @@ public class List {
 		for(Node outer = this.head; outer != null; outer = outer.next) {
 			boolean swapped;
 			do {
-				swapped =false;
+				swapped = false;
 				for(Node inner = this.head; inner != this.tail; inner = inner.next) {
 					if(inner.info > inner.next.info) {
 						int tmp = inner.info;
@@ -73,94 +127,31 @@ public class List {
 			}while(swapped == true);
 		}
 	}
-	public void deleteOnIndex(int index) {
-		int size = this.numberOfElements();
-		if(index < 0 || index > size - 1 || this.isEmpty() )
-			System.out.println();
-		else {
-			if(index == 0)
-				this.deleteFromHead();
-			else if(index == size- 1)
-				this.deleteFromTail();
-			else {
-				int count = 0;
-				Node prev = null, current = this.head;
-				while(count < index) {
-					count++;
-					prev = current;
-					current = current.next;
-				}
-				prev.next = current.next;
-			}
-		}
-	}
-	/*
-	public void deleteNodesWithValue(int value) {
-		Node previous = null;
-		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.isEqual(value)) {
-				if(tmp == head)
-					this.deleteFromHead();
-				else if(tmp == tail)
-					this.deleteFromTail();
-				else {
-					previous.next = previous.next.next;
-					tmp = previous;
-				}
-			}
-			else {
-				previous = tmp;
-			}
-		}
-	}
-	*/
-	public void deleteNodesWithValue(int value) {
-		if(this.isEmpty())
-			System.out.println();
-		else if(this.head != this.tail) {
-			Node current = this.head;
-			while(/*current != this.tail*/ current.next != null) {
-				if(current.next.info ==value) 
-					if(current.next.next == null) {
-						current.next = null;
-					}
-					else
-						current.next = current.next.next;
-				else
-					current = current.next;
-			}
-			this.tail = current;
-		}
-		if(this.head.info == value)
-			this.deleteFromHead();
-	}
-	public void insertBefore(int listElement, int newElement) {
-		Node prev = null;
-		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.info == listElement) {
-				if(tmp == this.head)
-					this.head = new Node(newElement, this.head);
-				else {
-					Node newNode = new Node(newElement, tmp);
-					prev.next = newNode;
-				}
-			}
-			prev = tmp;
-		}
-	}
 	public void insertAfter(int listElement, int newElement) {
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
 			if(tmp.info == listElement) {
-				if(tmp == this.tail) {
-					this.tail.next = new Node(newElement);
-					this.tail = this.tail.next;
-				}
+				if(tmp == this.tail)
+					this.addToTail(newElement);
 				else {
 					Node newNode = new Node(newElement, tmp.next);
 					tmp.next = newNode;
 				}
 				tmp = tmp.next;
 			}
+		}
+	}
+	public void insertBefore(int listElement, int newElement) {
+		Node prev = null;
+		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
+			if(tmp.info == listElement) {
+				if(tmp == this.head)
+					this.addToHead(newElement);
+				else {
+					Node newNode = new Node(newElement, tmp);
+					prev.next = newNode;
+				}
+			}
+			prev = tmp;
 		}
 	}
 }
