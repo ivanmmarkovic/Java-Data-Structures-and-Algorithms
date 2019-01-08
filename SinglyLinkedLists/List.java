@@ -70,7 +70,7 @@ public class List {
 			System.out.println("List is empty");
 		else if(this.head != this.tail) {
 			Node currentNode = this.head;
-			while(currentNode.next != null)
+			while(currentNode.next != null) /* NOT currentNode != this.tail, tail can be null */
 				if(currentNode.next.info == val) {
 					Node toDelete = currentNode.next;
 					if(currentNode.next.next == null)
