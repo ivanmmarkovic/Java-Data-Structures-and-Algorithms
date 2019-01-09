@@ -68,28 +68,6 @@ public class List {
 			return retvalue;
 		}
 	}
-	/*
-	public void deleteNodesWithValue(int value) {
-		while(this.head != null && this.head.info == value)
-			this.deleteFromHead();
-		while(this.tail != null && this.tail.info == value)
-			this.deleteFromTail();
-		if(!this.isEmpty() && this.head != this.tail) {
-			Node current = this.head.next;
-			while(current != this.tail) {
-				Node toDelete = null;
-				if(current.info == value) {
-					toDelete = current;
-					current.prev.next = current.next;
-					current.next.prev = current.prev;
-				}
-				current = current.next;	
-				if(toDelete != null)
-					toDelete = null;
-			}
-		}
-	}
-	*/
 	public void deleteNodesWithValues(int value) {
 		if(this.isEmpty())
 			System.out.println("List is empty");
