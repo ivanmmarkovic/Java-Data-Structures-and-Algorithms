@@ -72,26 +72,24 @@ public class List {
 		if(this.isEmpty())
 			System.out.println("List is empty");
 		else {
-			if(this.head != this.tail) {
-				Node currentNode = this.head;
-				while(currentNode.next != null) 
-					if(currentNode.next.info == value) {
-						Node toDelete = currentNode.next;
-						if(currentNode.next.next == null) {
-							currentNode.next = null;
-						}
-						else {
-							currentNode.next = currentNode.next.next;
-							currentNode.next.next.prev = currentNode;
-						}
+			while(this.head != null && this.head.info == value)
+				this.deleteFromHead();
+			while(this.tail != null && this.tail.info == value)
+				this.deleteFromTail();
+			if(!this.isEmpty() && this.head != this.tail) {
+				Node current = this.head.next;
+				while(current != this.tail) {
+					if(current.info == value) {
+						Node toDelete = current;
+						current.prev.next = current.next;
+						current.next.prev = current.prev;
+						current = current.next;
 						toDelete = null;
 					}
-					else
-						currentNode = currentNode.next;
-				this.tail = currentNode;
+					else 
+						current = current.next;
+				}
 			}
-			if(this.head.info == value)
-				this.deleteFromHead();
 		}
 	}
 	public void deleteOnIndex(int index) {
