@@ -87,7 +87,7 @@ public class List {
 			return toReturn;
 		}
 	}
-	
+	/*
 	public void deleteNodesWithValue1(int value) {
 		if(this.isEmpty())
 			System.out.println("List is empty");
@@ -133,6 +133,7 @@ public class List {
 			}
 		}
 	}
+	*/
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
 		if(this.isEmpty())
