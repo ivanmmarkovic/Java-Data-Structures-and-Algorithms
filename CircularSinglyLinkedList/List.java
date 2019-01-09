@@ -134,6 +134,23 @@ public class List {
 		}
 	}
 	*/
+	public void deleteNodesWithValues(int value) {
+		if(this.isEmpty())
+			System.out.println("List is empty");
+		else {
+			Node tmp = this.head;
+			while(tmp.next != this.head) {
+				if(tmp.next.info == value) {
+					tmp.next = tmp.next.next;
+				}
+				else 
+					tmp = tmp.next;
+			}
+			this.tail = tmp;
+			if(this.head.info == value)
+				this.deleteFromHead();
+		}
+	}
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
 		if(this.isEmpty())
