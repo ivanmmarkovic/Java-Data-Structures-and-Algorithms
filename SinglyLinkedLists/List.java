@@ -112,20 +112,19 @@ public class List {
 		}
 	}
 	public void sort() {
-		for(Node outer = this.head; outer != null; outer = outer.next) {
-			boolean swapped;
-			do {
-				swapped = false;
-				for(Node inner = this.head; inner != this.tail; inner = inner.next) {
-					if(inner.info > inner.next.info) {
-						int tmp = inner.info;
-						inner.info = inner.next.info;
-						inner.next.info = tmp;
-						swapped = true;
-					}
+		boolean swapped;
+		do {
+			swapped = false;
+			for(Node tmp = this.head; tmp.next != null; tmp = tmp.next) {
+				if(tmp.info > tmp.next.info) {
+					int storage = tmp.info;
+					tmp.info = tmp.next.info;
+					tmp.next.info = storage;
+					swapped = true;
 				}
-			}while(swapped == true);
-		}
+			}
+			
+		}while(swapped);
 	}
 	public void insertAfter(int listElement, int newElement) {
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
