@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Graph graph = new Graph(10);
 		
 		Vertex a = new Vertex("A");
@@ -41,7 +41,8 @@ public class Main {
 		graph.depthFirstSearch();
 		System.out.println("###############");
 		graph.depthFirstSearch("A", "I");
-			
+		System.out.println("###############");
+		graph.depthFirstSearch("A", "P");
 		
 	}
 
