@@ -1,15 +1,20 @@
+
 import java.util.Stack;
 
 public class Graph {
 	
-	int maxNumberOfVertices, currentNumberOfVertices;
+	int maxNumberOfVertices;
+	int currentNumberOfVertices;
 	Vertex vertices[];
 	boolean adjacencyMatrix[][];
+	Stack<Vertex> stack;
+	
 	public Graph(int maxNumberOfVertices) {
 		this.maxNumberOfVertices = maxNumberOfVertices;
-		this.currentNumberOfVertices = 0;
 		this.vertices = new Vertex[this.maxNumberOfVertices];
 		this.adjacencyMatrix = new boolean[this.maxNumberOfVertices][this.maxNumberOfVertices];
+		this.currentNumberOfVertices = 0;
+		this.stack = new Stack<Vertex>();
 	}
 	
 	public void addVertex(Vertex v) {
@@ -20,7 +25,8 @@ public class Graph {
 	}
 	
 	public void addVertex(String label) {
-		this.vertices[this.currentNumberOfVertices] = new Vertex(label, this.currentNumberOfVertices);
+		this.vertices[this.currentNumberOfVertices] = new Vertex(label);
+		this.vertices[this.currentNumberOfVertices].index = this.currentNumberOfVertices;
 		this.adjacencyMatrix[this.currentNumberOfVertices][this.currentNumberOfVertices] = false;
 		this.currentNumberOfVertices++;
 	}
@@ -30,29 +36,76 @@ public class Graph {
 		this.adjacencyMatrix[end][start] = true;
 	}
 	
-	public void addEdge(String labelStart, String labelEnd) {
-		int start = this.returnIndexByLabel(labelStart);
-		int end = this.returnIndexByLabel(labelEnd);
-		if(start != -1 && end != -1)
-			this.addEdge(start, end);
+	public void addEdge(String label1, String label2) {
+		int start = this.getIndexByLabel(label1);
+		int end = this.getIndexByLabel(label2);
+		if(start == -1 || end == -1)
+			return;
+		this.adjacencyMatrix[start][end] = true;
+		this.adjacencyMatrix[end][start] = true;
 	}
 	
-	public int returnIndexByLabel(String label) {
-		int index = -1;
-		int count = 0;
+	public int getIndexByLabel(String label) {
+		int index = 0;
 		boolean found = false;
-		while(count < this.currentNumberOfVertices && !found) {
-			if(this.vertices[count].label.equals(label))
+		while(index < this.vertices.length && !found) {
+			if(this.vertices[index].label.equals(label))
 				found = true;
 			else
-				count++;
+				index++;
 		}
 		if(found)
-			index = count;
-		return index;		
+			return index;
+		else
+			return -1;
 	}
-	
-	public int findNextVertex(int index) {
+	public void depthFirstSearch() {
+		Vertex startVertex = this.vertices[0];
+		Vertex peekedVertex;
+		startVertex.visited = true;
+		this.stack.push(startVertex);
+		System.out.println("Visited : " + startVertex.label);
+		while(!this.stack.isEmpty()) {
+			peekedVertex = this.stack.peek();
+			int index = this.getUnvisitedNeighbour(peekedVertex.index);
+			if(index == -1)
+				this.stack.pop();
+			else {
+				this.vertices[index].visited = true;
+				this.stack.push(this.vertices[index]);
+				System.out.println("Visited : " + this.vertices[index].label);
+			}
+		}
+		for(int i = 0; i < this.currentNumberOfVertices; i++)
+			this.vertices[i].visited = false;
+	}
+	public void depthFirstSearch(String label1, String label2) {
+		int startVertexIndex = this.getIndexByLabel(label1);
+		if(startVertexIndex == -1)
+			return;
+		Vertex startVertex = this.vertices[startVertexIndex];
+		startVertex.visited = true;
+		this.stack.push(startVertex);
+		System.out.println("Visited : " + startVertex.label);
+		boolean found = false;
+		Vertex peekedVertex;
+		while(!this.stack.isEmpty() && !found) {
+			peekedVertex = this.stack.peek();
+			int index = this.getUnvisitedNeighbour(peekedVertex.index);
+			if(index == -1)
+				this.stack.pop();
+			else {
+				this.vertices[index].visited = true;
+				this.stack.push(this.vertices[index]);
+				if(this.vertices[index].label.equals(label2))
+					found = true;
+				System.out.println("Visited : " + this.vertices[index].label);
+			}
+		}
+		for(int i = 0; i < this.currentNumberOfVertices; i++)
+			this.vertices[i].visited = false;
+	}
+	public int getUnvisitedNeighbour(int index) {
 		int count = 0;
 		boolean found = false;
 		while(count < this.currentNumberOfVertices && !found) {
@@ -65,51 +118,6 @@ public class Graph {
 			return count;
 		else
 			return -1;
-	}
-	
-	public void depthFirstSearch() {
-		Vertex vertex = this.vertices[0];
-		vertex.visited = true;
-		System.out.println("Visited : " + vertex.label);
-		Stack<Vertex> stack = new Stack<>();
-		stack.push(vertex);
-		while(!stack.isEmpty()) {
-			Vertex lastInVertex = stack.peek();
-			int neighbourIndex = this.findNextVertex(lastInVertex.index);
-			if(neighbourIndex == -1)
-				stack.pop();
-			else {
-				stack.push(this.vertices[neighbourIndex]);
-				this.vertices[neighbourIndex].visited = true;
-				System.out.println("Visited : " + this.vertices[neighbourIndex].label);
-			}
-		}
-		for(int j = 0; j < this.currentNumberOfVertices; j++)
-			this.vertices[j].visited = false;
-	}
-	
-	public void depthFirstSearch(String startLabel, String endLabel) {
-		 int startIndex = this.returnIndexByLabel(startLabel);
-		 Vertex startVertex = this.vertices[startIndex];
-		 boolean found = false;
-		 Stack<Vertex> stack = new Stack<>();
-		 startVertex.visited = true;
-		 stack.push(startVertex);
-		 System.out.println("Visited : " + stack.peek().label);
-		 while(stack.isEmpty() || !found) {
-			Vertex lastInVertex = stack.peek();
-			int neighbourIndex = this.findNextVertex(lastInVertex.index);
-			if (neighbourIndex == -1)
-				stack.pop();
-			else {
-				stack.push(this.vertices[neighbourIndex]);
-				this.vertices[neighbourIndex].visited = true;
-			}
-			 System.out.println("Visited : " + stack.peek().label);
-			 if(stack.peek().label.equals(endLabel))
-				 found = true;
-			 
-		 }
 	}
 
 }
