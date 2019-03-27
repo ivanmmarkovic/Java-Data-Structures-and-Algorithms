@@ -1,26 +1,21 @@
 
 public class Node {
 	
-	public int payload;
-	public Node next;
-	
+	int info;
+	Node next;
 	public Node() {
-		this.payload = 0;
+		this.info = 0;
 		this.next = null;
 	}
 	public Node(int i) {
-		this.payload = i;
+		this.info = i;
 		this.next = null;
 	}
-	public Node(int i, Node n) {
-		this.payload = i;
-		this.next = n;
+	public Node(int i, Node next) {
+		this.info = i;
+		this.next = next;
 	}
 	public int print() {
-		return this.payload;
+		return info;
 	}
-	public boolean isEqual(int i) {
-		return this.payload == i;
-	}
-
 }
