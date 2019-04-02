@@ -65,6 +65,24 @@ public class BinarySearchTree {
 			return this;
 	}
 	
+	public boolean contain(int key) {
+		if(this.key == key)
+			return true;
+		else if(this.key > key)
+			return this.leftChild.contain(key);
+		else 
+			return this.rightChild.contain(key);
+	}
+	
+	public int size() {
+		int result = 1;
+		if(this.hasLeftChild())
+			result +=  this.leftChild.size();
+		if(this.hashRightChild())
+			result += this.rightChild.size();
+		return result;
+	}
+	
 	public BinarySearchTree get(int key) {
 		if(this.key == null)
 			return null;
@@ -168,11 +186,13 @@ public class BinarySearchTree {
 	}
 	
 	public void printBinarySearchTree() {
+		System.out.println(this.key);
 		if(this.hasLeftChild())
 			this.leftChild.printBinarySearchTree();
-		System.out.println(this.key);
 		if(this.hashRightChild())
 			this.rightChild.printBinarySearchTree();
 	}
 	
 }
+
+
