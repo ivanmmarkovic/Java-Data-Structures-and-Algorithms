@@ -148,12 +148,12 @@ public class BinarySearchTree {
 				}
 			}
 			else if(bst.hasBothChildren()) {
-				treeToReturn = this.leftChild.findMax();
+				treeToReturn = bst.leftChild.findMax();
 				Integer tmpKey = treeToReturn.key;
 				Payload tmpPayload = treeToReturn.payload;
 				this.delete(treeToReturn.key);
-				this.key = tmpKey;
-				this.payload = tmpPayload;
+				bst.key = tmpKey;
+				bst.payload = tmpPayload;
 			}
 			else if(bst.hasLeftChild()) {
 				treeToReturn = bst;
@@ -186,12 +186,11 @@ public class BinarySearchTree {
 	}
 	
 	public void printBinarySearchTree() {
-		System.out.println(this.key);
+		System.out.print(this.key + " ");
 		if(this.hasLeftChild())
 			this.leftChild.printBinarySearchTree();
 		if(this.hashRightChild())
-			this.rightChild.printBinarySearchTree();
-	}
+			this.rightChild.printBinarySearchTree();	}
 	
 }
 
