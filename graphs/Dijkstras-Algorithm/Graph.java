@@ -35,9 +35,8 @@ public class Graph {
 		PriorityQueue pq = new PriorityQueue(this.maxNumberOfVertices);
 		for(int i = 0; i < this.currentNumberOfVertices; i++)
 			pq.insert(this.vertices[i]);
-		//boolean found = false;
 		Vertex minVertex, tmpVertex;
-		while(!pq.isEmpty()/* && !found*/) {
+		while(!pq.isEmpty()) {
 			minVertex = pq.getMin();
 			for (Vertex v : this.neighbours.get(minVertex)) {
 				tmpVertex = this.findVertexByLabel(v.label);
