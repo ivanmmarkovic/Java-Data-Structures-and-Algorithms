@@ -6,6 +6,7 @@ public class Graph {
 	int currentNumberOfVertices, maxNumberOfVertices;
 	Vertex vertices[];
 	HashMap<Vertex, ArrayList<Vertex>> neighbours;
+	
 	public Graph(int maxNumberOfVertices) {
 		this.maxNumberOfVertices = maxNumberOfVertices;
 		this.vertices = new Vertex[this.maxNumberOfVertices];
