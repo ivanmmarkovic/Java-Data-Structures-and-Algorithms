@@ -121,7 +121,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 				this.size--;
 			} else if (node.hasBothChildren()) {
 				Node<Key, T> minNode = this.findMin(node.rightChild);
-				Node<Key, T> refNode = new Node(minNode.key, minNode.payload, null, null,null);
+				Node<Key, T> refNode = new Node<Key, T>(minNode.key, minNode.payload, null, null,null);
 				this.delete(minNode.key);
 				node.key = refNode.key;
 				node.payload = refNode.payload;
