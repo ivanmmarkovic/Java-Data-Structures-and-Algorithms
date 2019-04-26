@@ -10,7 +10,9 @@ public class Main {
 		bst.put(40, "string - 40");
 		bst.put(50, "string -  50");
 		bst.inorder();
-
+		
+		System.out.println(bst.contains(25));
+		System.out.println(bst.contains(101));
 		
 	}
 
