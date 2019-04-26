@@ -1,69 +1,62 @@
 package trees.binaryHeap.minHeap;
 
-public class MinHeap {
+public class MinHeap{
 	
-	int heap[];
-	int pointer;
+	Integer queue[];
+	int size, currentNumber;
 	public MinHeap(int size) {
-		this.heap = new int[size];
-		this.pointer = 0;
+		this.size = size;
+		this.queue = new Integer[this.size];
+		this.currentNumber = 0;
 	}
 	
 	public boolean isEmpty() {
-		return this.pointer == 0;
+		return this.currentNumber == 0;
 	}
 	
-	public void insert(int element) {
-		if(this.pointer < this.heap.length - 1) {
-			this.heap[++this.pointer] = element;
-			this.percUp(this.pointer);
-		}
-		else {
-			System.out.println("Heap is full");
-		}
+	public void insert(Integer Integer) {
+		this.queue[++this.currentNumber] = Integer;
+		this.percUp(this.currentNumber);
 	}
 	
 	public void percUp(int index) {
+		Integer tmpInteger = null;
 		while(index / 2 > 0) {
-			if(this.heap[index/2] > this.heap[index]) {
-				int tmp = this.heap[index/2];
-				this.heap[index/2] = this.heap[index];
-				this.heap[index] = tmp;
+			if(this.queue[index/2] > this.queue[index]) {
+				tmpInteger = this.queue[index];
+				this.queue[index] = this.queue[index/2];
+				this.queue[index/2] = tmpInteger;
 			}
 			index = index / 2;
 		}
 	}
 	
 	public Integer deleteMin() {
-		if(this.isEmpty()) {
-			return null;
-		}
-		else {
-			int retValue = this.heap[1];
-			this.heap[1] = this.heap[this.pointer--];
-			this.percDown(1);
-			return retValue;
-		}
+		Integer toDelete = this.queue[1];
+		this.queue[1] = this.queue[currentNumber--];
+		this.percDown(1);
+		return toDelete;
 	}
 	
 	public void percDown(int index) {
-		while(index * 2 <= this.pointer) {
-			int minIndex = this.getMinIndex(index);
-			if(this.heap[index] > this.heap[minIndex]) {
-				int tmp = this.heap[minIndex];
-				this.heap[minIndex] = this.heap[index];
-				this.heap[index] = tmp;
+		Integer tmpInteger;
+		while(index * 2 <= this.currentNumber) {
+			int minIndex = this.getMinIndex(index); 
+			if(this.queue[index] > this.queue[minIndex]) {
+				tmpInteger = this.queue[index];
+				this.queue[index] = this.queue[minIndex];
+				this.queue[minIndex] = tmpInteger;
 			}
 			index = minIndex;
 		}
 	}
 	
 	public int getMinIndex(int index) {
-		if(index * 2 + 1 > this.pointer) {
-			return index;
+		if(index * 2 + 1 > this.currentNumber) {
+			return index * 2;
 		}
 		else {
-			if(this.heap[index * 2] <= this.heap[index * 2 + 1]) {
+			if(this.queue[index * 2] <= this.queue[index * 2 + 1]) {
 				return index * 2;
 			}
 			else {
@@ -73,25 +66,14 @@ public class MinHeap {
 	}
 	
 	public Integer getMin() {
-		if(this.isEmpty())
-			return null;
-		else
-			return this.heap[1];
+		return this.queue[1];
 	}
 	
 	public MinHeap buildHeap(int numbers[]) {
 		MinHeap mh = new MinHeap(numbers.length);
-		for(int element: numbers)
-			mh.insert(element);
+		for(int number: numbers)
+			mh.insert(number);
 		return mh;
-	}
-	
-	@Override 
-	public String toString() {
-		String s = "";
-		for(int i = 1; i <= this.pointer; i++)
-			s += this.heap[i] + ", ";
-		return s;
 	}
 
 }
