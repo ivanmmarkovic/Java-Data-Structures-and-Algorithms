@@ -1,52 +1,42 @@
+package trees.binaryTree;
 
 public class BinaryTree<T> {
-
-	String key;
-	T payload;
-	BinaryTree<T> leftChild, rightChild;
 	
+	Node<T> root;
 	public BinaryTree() {
 		// TODO Auto-generated constructor stub
+		this.root = null;
 	}
 	
-	public BinaryTree(String key) {
-		this.key = key;
+	public void setRootValue(T t) {
+		this.root = new Node<T>(t, null, null);
 	}
 	
-	public BinaryTree(String key, T payload) {
-		this.key = key;
-		this.payload = payload;
+	public T getRootValue() {
+		return this.root.payload;
 	}
 	
-	public BinaryTree(String key, T payload, BinaryTree<T> leftChild, BinaryTree<T> rightChild) {
-		this.key = key;
-		this.payload = payload;
-		this.leftChild = leftChild;
-		this.rightChild = rightChild;
+	public void insertLeft(T t) {
+		if(this.root == null)
+			this.root = new Node<T>(t, null, null);
+		else {
+			this.root.leftChild = new Node<T>(t, this.root.leftChild, null);
+		}
 	}
 	
-	public void setRootValue(String key) {
-		this.key = key;
+	public void insertRight(T t) {
+		if(this.root == null)
+			this.root = new Node<T>(t, null, null);
+		else {
+			this.root.rightChild = new Node<T>(t, null, this.root.rightChild);
+		}
 	}
 	
-	public String getRootValue() {
-		return this.key;
+	public Node<T> getLeftChild(){
+		return this.root.leftChild;
 	}
 	
-	public void insertLeft(String key, T payload) {
-		this.leftChild = new BinaryTree(key, payload, this.leftChild, null);
+	public Node<T> getRightChild(){
+		return this.root.rightChild;
 	}
-	
-	public void insertRight(String key, T payload){
-		this.rightChild = new BinaryTree(key, payload, null, this.rightChild);
-	}
-	
-	public BinaryTree<T> getLeftChild(){
-		return this.leftChild;
-	}
-	
-	public BinaryTree<T> getRightChild(){
-		return this.rightChild;
-	}
-	
 }
