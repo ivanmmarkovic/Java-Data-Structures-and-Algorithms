@@ -9,11 +9,18 @@ public class Main {
 		bst.put(25, "string - 25");
 		bst.put(40, "string - 40");
 		bst.put(50, "string -  50");
+		bst.put(35, "string - 35");
 		bst.inorder();
 		
 		System.out.println(bst.contains(25));
 		System.out.println(bst.contains(101));
 		
+		bst.delete(40);
+		bst.inorder();
+		System.out.println("---------------");
+		bst.delete(30);
+		bst.inorder();
+		System.out.println(bst.root.key); // 35
 	}
 
 }

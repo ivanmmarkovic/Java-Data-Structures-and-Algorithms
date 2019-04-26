@@ -14,6 +14,10 @@ public class Node<Key extends Comparable<Key>, T> {
 		this.rightChild = rightChild;
 	}
 	
+	public boolean isLeaf() {
+		return !this.hasLeftChild() && !this.hasRightChild();
+	}
+	
 	public boolean hasLeftChild() {
 		return this.leftChild != null;
 	}
@@ -21,5 +25,21 @@ public class Node<Key extends Comparable<Key>, T> {
 	public boolean hasRightChild() {
 		return this.rightChild != null;
 	}	
+	
+	public boolean hasBothChildren() {
+		return this.hasLeftChild() && this.hasRightChild();
+	}
+	
+	public boolean hasParent() {
+		return this.parent != null;
+	}
+	
+	public boolean isLeftChild() {
+		return this.parent.leftChild == this;
+	}
+	
+	public boolean isRightChild() {
+		return this.parent.rightChild == this;
+	}
 	
 }

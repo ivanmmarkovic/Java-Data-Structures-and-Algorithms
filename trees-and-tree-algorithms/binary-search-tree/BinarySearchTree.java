@@ -91,6 +91,127 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 		}
 	}
 	
+	public T delete(Key key) {
+		Node<Key, T> node = this.getNode(key);
+		T toReturn = null;
+		if(node == null)
+			return toReturn;
+		else {
+			toReturn = node.payload;
+			if (node.isLeaf()) {
+				if (node.hasParent()) {
+					if (node.isLeftChild()) {
+						node.parent.leftChild = null;
+						node = null;
+					} else {
+						node.parent.rightChild = null;
+						node = null;
+					}
+				} else {
+					node = null;
+				}
+			} else if (node.hasBothChildren()) {
+				Node<Key, T> minNode = this.findMin(node.rightChild);
+				Node<Key, T> refNode = new Node(minNode.key, minNode.payload, null, null,null);
+				this.delete(minNode.key);
+				node.key = refNode.key;
+				node.payload = refNode.payload;
+				
+			} else if (node.hasLeftChild()) {
+				if (node.hasParent()) {
+					if (node.isLeftChild()) {
+						node.parent.leftChild = node.leftChild;
+						node.leftChild.parent = node.parent;
+						node = null;
+					} else {
+						node.parent.rightChild = node.leftChild;
+						node.leftChild.parent = node.parent;
+						node = null;
+					}
+				} else {
+					this.root = node.leftChild;
+					this.root.parent = null;
+					node = null;
+				}
+			} else { // if node has right child
+				if (node.hasParent()) {
+					if (node.isLeftChild()) {
+						node.parent.leftChild = node.rightChild;
+						node.rightChild.parent = node.parent;
+						node = null;
+					} else {
+						node.parent.rightChild = node.rightChild;
+						node.rightChild.parent = node.parent;
+						node = null;
+					}
+				} else {
+					this.root = node.rightChild;
+					this.root.parent = null;
+					node = null;
+				}
+			}
+			return toReturn;
+		}
+	}
+	
+	
+	public Node<Key, T> findMin() {
+		if(this.root == null)
+			return null;
+		else
+			return this.findMin(this.root);
+	}
+	
+	private Node<Key, T> findMin(Node<Key, T> node){
+		if(node.hasLeftChild())
+			return findMin(node.leftChild);
+		else
+			return node;
+	}
+	
+	public Node<Key, T> findMax(){
+		if(this.root == null)
+			return null;
+		else 
+			return this.findMax(this.root);
+	}
+	
+	private Node<Key, T> findMax(Node<Key, T> node){
+		if(node.hasRightChild())
+			return this.findMax(node.rightChild);
+		else
+			return node;
+	}
+	
+	public Node<Key, T> getNode(Key key){
+		if(this.root == null)
+			return null;
+		else {
+			return this.getNode(key, this.root);
+		}
+	}
+	
+	private Node<Key, T> getNode(Key key, Node<Key, T> node){
+		if(node.key.equals(key)) {
+			return node;
+		}
+		else {
+			int comp = node.key.compareTo(key);
+			if(comp > 0) {
+				if(node.hasLeftChild())
+					return this.getNode(key, node.leftChild);
+				else
+					return null;
+			}
+			else {
+				if(node.hasRightChild())
+					return this.getNode(key, node.rightChild);
+				else
+					return null;
+			}
+		}
+	}
+	
 	public void inorder() {
 		if(this.root != null)
 			this.inorder(this.root);
