@@ -358,6 +358,20 @@ public class AVLTree<Key extends Comparable<Key>, T> {
 		
 	}
 	
+	
+	public void preorder() {
+		if(this.root != null)
+			this.preorder(this.root);
+	}
+	
+	private void preorder(Node<Key, T> node) {
+		System.out.println(node.payload);
+		if(node.hasLeftChild())
+			this.inorder(node.leftChild);
+		if(node.hasRightChild())
+			this.inorder(node.rightChild);
+	}
+	
 	public void inorder() {
 		if(this.root != null)
 			this.inorder(this.root);
@@ -369,6 +383,19 @@ public class AVLTree<Key extends Comparable<Key>, T> {
 		System.out.println(node.payload);
 		if(node.hasRightChild())
 			this.inorder(node.rightChild);
+	}
+	
+	public void postorder() {
+		if(this.root != null)
+			this.postorder(this.root);
+	}
+	
+	private void postorder(Node<Key, T> node) {
+		if(node.hasLeftChild())
+			this.inorder(node.leftChild);
+		if(node.hasRightChild())
+			this.inorder(node.rightChild);
+		System.out.println(node.payload);
 	}
 	
 	
