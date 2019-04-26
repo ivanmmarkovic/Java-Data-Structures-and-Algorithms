@@ -75,5 +75,13 @@ public class MinHeap{
 			mh.insert(number);
 		return mh;
 	}
+	
+	@Override
+	public String toString() {
+		String s = "";
+		for(int i = 1; i <= this.currentNumber; i++)
+			s += this.queue[i] + ", ";
+		return s;
+	}
 
 }
