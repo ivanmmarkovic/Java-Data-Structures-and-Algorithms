@@ -10,6 +10,8 @@ public class Main {
 		bst.put(40, "string - 40");
 		bst.put(50, "string -  50");
 		bst.put(35, "string - 35");
+		
+		System.out.println("Size : " + bst.size);
 		bst.inorder();
 		
 		System.out.println(bst.contains(25));
@@ -21,6 +23,7 @@ public class Main {
 		bst.delete(30);
 		bst.inorder();
 		System.out.println(bst.root.key); // 35
+		System.out.println("Size : " + bst.size);
 	}
 
 }

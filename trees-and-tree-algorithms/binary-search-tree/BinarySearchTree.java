@@ -3,14 +3,18 @@ package trees.binarySearchTree;
 public class BinarySearchTree<Key extends Comparable<Key>, T> {
 	
 	Node<Key, T> root;
+	int size;
 	
 	public BinarySearchTree() {
 		this.root = null;
+		this.size  = 0;
 	}
 	
 	public void put(Key key, T payload) {
-		if(this.root  == null) 
+		if(this.root  == null) {
 			this.root = new Node<Key, T>(key, payload, null, null, null);
+			this.size++;
+		}
 		else 
 			this.put(key, payload, this.root);
 	}
@@ -23,14 +27,18 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 			if(comp > 0) {
 				if(node.hasLeftChild())
 					this.put(key, payload, node.leftChild);
-				else
+				else {
 					node.leftChild = new Node<Key, T>(key, payload, node, null, null);
+					this.size++;
+				}
 			}
 			else {
 				if(node.hasRightChild())
 					this.put(key, payload, node.rightChild);
-				else
+				else {
 					node.rightChild = new Node<Key, T>(key, payload, node, null, null);
+					this.size++;
+				}
 			}
 		}
 	}
@@ -110,13 +118,14 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 				} else {
 					node = null;
 				}
+				this.size--;
 			} else if (node.hasBothChildren()) {
 				Node<Key, T> minNode = this.findMin(node.rightChild);
 				Node<Key, T> refNode = new Node(minNode.key, minNode.payload, null, null,null);
 				this.delete(minNode.key);
 				node.key = refNode.key;
 				node.payload = refNode.payload;
-				
+				// no need for this this.size--
 			} else if (node.hasLeftChild()) {
 				if (node.hasParent()) {
 					if (node.isLeftChild()) {
@@ -133,6 +142,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 					this.root.parent = null;
 					node = null;
 				}
+				this.size--;
 			} else { // if node has right child
 				if (node.hasParent()) {
 					if (node.isLeftChild()) {
@@ -149,6 +159,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, T> {
 					this.root.parent = null;
 					node = null;
 				}
+				this.size--;
 			}
 			return toReturn;
 		}
