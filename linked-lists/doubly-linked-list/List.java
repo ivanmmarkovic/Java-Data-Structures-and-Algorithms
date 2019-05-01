@@ -86,9 +86,9 @@ public class List {
 					currentNode = currentNode.next;
 				}
 			}
+			this.tail = currentNode;
 			if(this.head.info == v)
 				this.deleteFromHead();
-			this.tail = currentNode;
 		}
 	}
 	public void deleteOnIndex(int index) {
