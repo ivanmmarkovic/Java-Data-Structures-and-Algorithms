@@ -1,4 +1,3 @@
-package xyz;
 
 public class Stack {
 	
