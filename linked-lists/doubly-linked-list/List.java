@@ -91,6 +91,32 @@ public class List {
 				this.deleteFromHead();
 		}
 	}
+	public Integer deleteWithValue(int value) {
+		if(this.isEmpty())
+			return null;
+		Node tmp = this.head;
+		Integer toReturn = null;
+		while(tmp.next != null) {
+			if(tmp.next.info == value) {
+				toReturn = tmp.next.info;
+				if(tmp.next.next == null)
+					tmp.next = null;
+				else {
+					tmp.next = tmp.next.next;
+					tmp.next.prev = tmp;
+				}
+			}
+			else
+				tmp = tmp.next;
+		}
+		this.tail = tmp;
+		if(this.head.info == value)
+			return this.deleteFromHead();
+		if(toReturn != null)
+			return toReturn;
+		else
+			return null;
+	}
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
 		if(index < 0 || index > size - 1 || this.isEmpty()){
