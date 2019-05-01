@@ -1,24 +1,25 @@
 
-
 public class Main {
 
 	public static void main(String[] args) {
-		Stack s = new Stack(5);
 		
-		s.push(21);
-		s.push(31);
-		s.push(117);
-		s.push(2);
-		s.push(9);
+		Stack stack = new Stack(5);
 		
-		s.push(91);
+		stack.push(15);
+		stack.push(3);
+		stack.push(10);
+		stack.push(1);
+		stack.push(100);
 		
-		System.out.println(s);
-		while(!s.isEmpty())
-			System.out.println("Removed : " + s.pop());
+		stack.push(1000);
 		
-		s.pop();
-
+		System.out.println(stack);
+		
+		while(!stack.isEmpty())
+			System.out.println("Removed : " + stack.pop());
+		
+		System.out.println(stack);
+		stack.pop();
 	}
 
 }
