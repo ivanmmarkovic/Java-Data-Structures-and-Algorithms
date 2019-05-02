@@ -21,7 +21,7 @@ public class List {
 			System.out.println();
 		}
 	}
-	public int numberOfElements() {
+	public int size() {
 		if(this.isEmpty())
 			return 0;
 		else {
@@ -112,53 +112,58 @@ public class List {
 		if(this.head.info == value)
 			this.deleteFromHead();
 	}
-	public Integer deleteOnIndex(int index) {
-		int size = this.numberOfElements();
-		if(index < 0 || index >= size)
+	public Integer deleteWithValue(int value) {
+		if(this.isEmpty())
 			return null;
+		Integer toReturn = null;
+		Node tmp = this.head;
+		while (tmp.next != this.head) {
+			if (tmp.next.info == value) {
+				toReturn = tmp.next.info;
+				if (tmp.next.next == this.head)
+					tmp.next = this.head;
+				else
+					tmp.next = tmp.next.next;
+			} else {
+				tmp = tmp.next;
+			}
+		}
+		this.tail = tmp;
+		this.tail.next = this.head;
+		this.head.prev = this.tail;
+		if(this.head.info == value)
+			return this.deleteFromHead();
+		else if(toReturn != null)
+			return toReturn;
+		else
+			return null;
+	}
+	
+	public void deleteOnIndex(int index) {
+		int size = this.size();
+		if(index < 0 || index >= size)
+			System.out.println("Index out of range");
 		else {
 			if(index == 0)
-				return this.deleteFromHead();
+				this.deleteFromHead();
 			else if(index == size - 1)
-				return this.deleteFromTail();
+				this.deleteFromTail();
 			else {
 				int count = 0;
-				Node current = this.head;
-				Node prev = null;
+				Node tmp = this.head;
 				while(count < index) {
+					tmp = tmp.next;
 					count++;
-					prev = current;
-					current = current.next;
 				}
-				prev.next = current.next;
-				current.next.prev = prev;
-				return current.info;
+				tmp.prev.next = tmp.next;
+				tmp.next.prev = tmp.prev;
 			}
 		}
 	}
-	public void insertAfter(int listElement, int newElement) {
-		if(this.isEmpty())
-			System.out.println();
-		else {
-			Node tmp = this.head;
-			do {
-				if (tmp.info == listElement) {
-					if (tmp == this.tail)
-						this.addToTail(newElement);
-					else {
-						Node newNode = new Node(newElement, tmp, tmp.next);
-						tmp.next.prev = newNode;
-						tmp.next = newNode;
-					}
-					tmp = tmp.next;
-				}
-				tmp = tmp.next;
-			} while (tmp != this.head);
-		}
-	}
+	
 	public void insertBefore(int listElement, int newElement) {
 		if(this.isEmpty())
-			System.out.println();
+			System.out.println("List is empty");
 		else {
 			Node tmp = this.head;
 			do {
@@ -173,21 +178,43 @@ public class List {
 				}
 				tmp = tmp.next;
 			}while(tmp != this.head);
-			
 		}
 	}
+	
+	public void insertAfer(int listElement, int newElement) {
+		if(this.isEmpty())
+			System.out.println("List is empty");
+		else {
+			Node tmp = this.head;
+			do {
+				if(tmp.info == listElement) {
+					if(tmp == this.tail)
+						this.addToTail(newElement);
+					else {
+						tmp.next = new Node(newElement, tmp, tmp.next);
+						tmp.next.next.prev = tmp.next;
+					}
+					tmp = tmp.next;
+				}
+				tmp = tmp.next;
+			}while(tmp != this.head);
+		}
+	}
+	
 	public void sort() {
-		Node tmp = this.head;
-		do {
-			for(Node inner = this.tail; inner != tmp; inner = inner.prev) {
-				if(inner.prev.info > inner.info) {
-					int storage = inner.prev.info;
-					inner.prev.info = inner.info;
-					inner.info = storage;
+		if(this.isEmpty())
+			System.out.println("List is empty");
+		else {
+			for(Node outer = this.head; outer.next != this.head; outer = outer.next) {
+				for(Node inner = this.tail; inner != outer; inner = inner.prev) {
+					if(inner.prev.info > inner.info) {
+						int storage = inner.prev.info;
+						inner.prev.info = inner.info;
+						inner.info = storage;
+					}
 				}
 			}
-			tmp = tmp.next;
-		}while(tmp != this.head);
+		}
 	}
 
 }
