@@ -92,8 +92,8 @@ public class List {
 			return null;
 		Node current = this.head;
 		while(current.next != null) {
-			if(current.next.payload == value) {
-				retValue = current.next.payload;
+			if(current.next.info == value) {
+				retValue = current.next.info;
 				if(current.next.next == null)
 					current.next = null;
 				else
@@ -103,8 +103,8 @@ public class List {
 				current = current.next;
 		}
 		this.tail = current;
-		if(this.head.payload == value) {
-			retValue = this.head.payload;
+		if(this.head.info == value) {
+			retValue = this.head.info;
 			this.deleteFromHead();
 		}
 		return retValue;
