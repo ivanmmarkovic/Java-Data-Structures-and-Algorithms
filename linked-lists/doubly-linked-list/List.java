@@ -92,30 +92,31 @@ public class List {
 		}
 	}
 	public Integer deleteWithValue(int value) {
+		Integer retValue = null;
 		if(this.isEmpty())
 			return null;
-		Node tmp = this.head;
-		Integer toReturn = null;
-		while(tmp.next != null) {
-			if(tmp.next.info == value) {
-				toReturn = tmp.next.info;
-				if(tmp.next.next == null)
-					tmp.next = null;
+		Node current = this.head;
+		while(current.next != null) {
+			if(current.next.info == value) {
+				retValue = current.next.payload;
+				if(current.next.next == null) {
+					current.next.prev = null;
+					current.next = null;
+				}
 				else {
-					tmp.next = tmp.next.next;
-					tmp.next.prev = tmp;
+					current.next = current.next.next;
+					current.next.prev = current;
 				}
 			}
 			else
-				tmp = tmp.next;
+				current = current.next;
 		}
-		this.tail = tmp;
-		if(this.head.info == value)
-			return this.deleteFromHead();
-		if(toReturn != null)
-			return toReturn;
-		else
-			return null;
+		this.tail = current;
+		if(this.head.info == value) {
+			retValue = this.head.info;
+			this.deleteFromHead();
+		}
+		return retValue;
 	}
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
