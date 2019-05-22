@@ -102,29 +102,30 @@ public class List {
 			this.deleteFromHead();
 	}
 	public Integer deleteWithValue(int value) {
+		Integer retValue = null;
 		if(this.isEmpty())
 			return null;
-		Integer toReturn = null;
-		Node tmp = this.head;
-		while (tmp.next != this.head) {
-			if (tmp.next.info == value) {
-				toReturn = tmp.next.info;
-				if (tmp.next.next == this.head)
-					tmp.next = this.head;
-				else
-					tmp.next = tmp.next.next;
-			} else {
-				tmp = tmp.next;
+		Node current = this.head;
+		while(current.next != this.head) {
+			if(current.next.info == value) {
+				retValue = current.next.info;
+				if(current.next.next == this.head) {
+					current.next = this.head;
+				}
+				else {
+					current.next = current.next.next;
+				}
 			}
+			else
+				current = current.next;
 		}
-		this.tail = tmp;
+		this.tail = current;
 		this.tail.next = this.head;
-		if(this.head.info == value)
-			return this.deleteFromHead();
-		else if(toReturn != null)
-			return toReturn;
-		else
-			return null;
+		if(this.head.info == value) {
+			retValue = this.head.info;
+			this.deleteFromHead();
+		}
+		return retValue;
 	}
 	public void deleteOnIndex(int index) {
 		int size = this.size();
