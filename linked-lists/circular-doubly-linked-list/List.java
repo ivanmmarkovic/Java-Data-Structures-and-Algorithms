@@ -118,22 +118,25 @@ public class List {
 			return null;
 		Node current = this.head;
 		while(current.next != this.head) {
-			if(current.next.payload == value) {
-				retValue = current.next.payload;
+			if(current.next.info == value) {
+				retValue = current.next.info;
 				if(current.next.next == this.head) {
 					current.next = this.head;
+					this.head.prev = current;
 				}
 				else {
 					current.next = current.next.next;
+					current.next.prev = current;
 				}
 			}
-			else
+			else {
 				current = current.next;
+			}
 		}
 		this.tail = current;
 		this.tail.next = this.head;
 		this.head.prev = this.tail;
-		if(this.head.payload == value) {
+		if(this.head.info == value) {
 			retValue = this.head.payload;
 			this.deleteFromHead();
 		}
