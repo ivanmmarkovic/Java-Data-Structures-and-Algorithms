@@ -191,7 +191,7 @@ public class List {
 		boolean swapped = false;
 		do {
 			swapped = false;
-			for(Node tmp = this.head; tmp.next != this.head; tmp = tmp.next) {
+			for(Node tmp = this.head; tmp != this.tail; tmp = tmp.next) {
 				if(tmp.info > tmp.next.info) {
 					int storage = tmp.info;
 					tmp.info = tmp.next.info;
