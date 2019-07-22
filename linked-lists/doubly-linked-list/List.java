@@ -1,168 +1,139 @@
 
 public class List {
-
-	private Node head, tail;
+	
+	Node head, tail;
 	public List() {
 		this.head = this.tail = null;
 	}
+	
 	public boolean isEmpty() {
 		return this.head == null;
 	}
+	
 	public void printAll() {
-		for(Node tmp =this.head; tmp != null; tmp = tmp.next)
-			System.out.print(tmp.info);
+		for(Node tmp = this.head; tmp != null; tmp = tmp.next)
+			System.out.print(tmp.payload + ", ");
 		System.out.println();
 	}
+	
 	public int numberOfElements() {
 		int count = 0;
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next)
 			count++;
 		return count;
 	}
-	public void addToHead(int i) {
-		if(this.isEmpty()) {
-			this.head = this.tail = new Node(i);
-		}
+	
+	public void addToHead(int payload) {
+		if(this.isEmpty())
+			this.head = this.tail = new Node(payload);
 		else {
-			this.head = new Node(i, null, this.head);
+			this.head = new Node(payload, null, this.head);
 			this.head.next.prev = this.head;
 		}
 	}
-	public void addToTail(int i) {
+	
+	public void addToTail(int payload) {
 		if(this.isEmpty())
-			this.head = this.tail = new Node(i);
+			this.head = this.tail = new Node(payload);
 		else {
-			this.tail.next = new Node(i, this.tail, null);
+			this.tail.next = new Node(payload, this.tail, null);
 			this.tail = this.tail.next;
-		}	
+		}
 	}
+	
 	public Integer deleteFromHead() {
 		if(this.isEmpty())
 			return null;
 		else {
-			Integer retvalue = this.head.info;
+			Node toDelete = this.head;
+			Integer toReturn = this.head.payload;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
-				Node toDelete = this.head;
 				this.head = this.head.next;
 				this.head.prev = null;
-				toDelete = null;
 			}
-			return retvalue;
+			toDelete = null;
+			return toReturn;
 		}
 	}
+	
 	public Integer deleteFromTail() {
 		if(this.isEmpty())
 			return null;
 		else {
-			Integer retvalue = this.tail.info;
+			Node toDelete = this.tail;
+			Integer toReturn = this.tail.payload;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
-				Node toDelete = this.tail;
 				this.tail = this.tail.prev;
 				this.tail.next = null;
-				toDelete = null;
 			}
-			return retvalue;
+			toDelete = null;
+			return toReturn;
 		}
 	}
-	public void deleteNodesWithValue(int v) {
-		if(this.isEmpty())
-			return;
+	
+	public Integer deleteNodesWithValue(int value) {
+		Integer toReturn = null;
+		if(this.isEmpty()) {
+			System.out.println("List is empty");
+		}
 		else {
 			Node currentNode = this.head;
 			while(currentNode.next != null) {
-				if(currentNode.next.info == v) {
+				if(currentNode.next.payload == value) {
+					toReturn = currentNode.next.payload;
+					Node toDelete = currentNode.next;
 					if(currentNode.next.next == null)
 						currentNode.next = null;
 					else {
 						currentNode.next = currentNode.next.next;
 						currentNode.next.prev = currentNode;
 					}
+					toDelete = null;
 				}
-				else {
+				else
 					currentNode = currentNode.next;
-				}
 			}
 			this.tail = currentNode;
-			if(this.head.info == v)
-				this.deleteFromHead();
 		}
+		if(this.head.payload == value)
+			toReturn = this.deleteFromHead();
+		return toReturn;
 	}
-	public Integer deleteWithValue(int value) {
-		Integer retValue = null;
-		if(this.isEmpty())
-			return null;
-		Node current = this.head;
-		while(current.next != null) {
-			if(current.next.info == value) {
-				retValue = current.next.payload;
-				if(current.next.next == null) {
-					current.next.prev = null;
-					current.next = null;
-				}
-				else {
-					current.next = current.next.next;
-					current.next.prev = current;
-				}
-			}
-			else
-				current = current.next;
-		}
-		this.tail = current;
-		if(this.head.info == value) {
-			retValue = this.head.info;
-			this.deleteFromHead();
-		}
-		return retValue;
-	}
+	
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
-		if(index < 0 || index > size - 1 || this.isEmpty()){
-			if(this.isEmpty())
-				System.out.println("List is empty");
-			else
-				System.out.println("Index out of range");
-		}
+		if(index < 0 || index >= size)
+			System.out.println("Index out of range");
 		else {
 			if(index == 0)
 				this.deleteFromHead();
-			else if(index ==size - 1)
+			else if(index == size - 1)
 				this.deleteFromTail();
 			else {
-				Node current = this.head;
-				int counter = 0;
-				while(counter < index) {
-					counter++;
-					current = current.next;
+				int count = 0;
+				Node curr = this.head;
+				while(count < index) {
+					curr = curr.next;
+					count++;
 				}
-				Node toDelete = current;
-				current.prev.next = current.next;
-				current.next.prev = current.prev;
-				toDelete = null;
+				curr.prev.next = curr.next;
+				curr.next.prev = curr.prev;
+				curr = null;
 			}
 		}
 	}
-	public void sort() {
-		for(Node outer = this.head; outer != null; outer = outer.next) {
-			for(Node inner = this.tail; inner != outer; inner = inner.prev) {
-				if(inner.prev.info > inner.info) {
-					int tmp = inner.prev.info;
-					inner.prev.info = inner.info;
-					inner.info = tmp;
-				}
-			}
-		}
-	}
-	public void insertAfter(int listElement, int newElement) {
+	
+	public void insertAfter(int listValue, int newValue) {
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.info == listElement) {
+			if(tmp.payload == listValue) {
 				if(tmp == this.tail)
-					this.addToTail(newElement);
+					this.addToTail(newValue);
 				else {
-					Node newNode = new Node(newElement, tmp, tmp.next);
+					Node newNode = new Node(newValue, tmp, tmp.next);
 					tmp.next.prev = newNode;
 					tmp.next = newNode;
 				}
@@ -170,17 +141,33 @@ public class List {
 			}
 		}
 	}
-	public void insertBefore(int listElement, int newElement) {
+	
+	public void insertBefore(int listValue, int newValue) {
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.info == listElement) {
-				if(tmp == this.head)
-					this.addToHead(newElement);
+			if(tmp.payload == listValue) {
+				if(tmp == this.head) {
+					this.addToHead(newValue);
+				}
 				else {
-					Node newNode = new Node(newElement, tmp.prev, tmp);
+					Node newNode = new Node(newValue, tmp.prev, tmp);
 					tmp.prev.next = newNode;
 					tmp.prev = newNode;
 				}
 			}
 		}
 	}
+	
+	public void sort() {
+		for(Node outer = this.head; outer != this.tail; outer = outer.next) {
+			for(Node inner = this.tail; inner != outer; inner = inner.prev) {
+				if(inner.prev.payload > inner.payload) {
+					int storage = inner.payload;
+					inner.payload = inner.prev.payload;
+					inner.prev.payload = storage;
+					
+				}
+			}
+		}
+	}
+	
 }
