@@ -1,77 +1,89 @@
 
 public class List {
-
-	private Node head, tail;
+	
+	Node head, tail;
 	public List() {
 		this.head = this.tail = null;
 	}
+	
 	public boolean isEmpty() {
 		return this.head == null;
 	}
+	
 	public void printAll() {
-		for(Node tmp =this.head; tmp != null; tmp = tmp.next)
-			System.out.print(tmp.info);
+		for(Node tmp = this.head; tmp != null; tmp = tmp.next)
+			System.out.print(tmp.payload + ", ");
 		System.out.println();
 	}
+	
 	public int numberOfElements() {
 		int count = 0;
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next)
 			count++;
 		return count;
 	}
-	public void addToHead(int i) {
-		this.head = new Node(i, this.head);
-		if(this.tail == null)
-			this.tail = this.head;
-	}
-	public void addToTail(int i) {
+	
+	public void addToHead(int payload) {
 		if(this.isEmpty())
-			this.head = this.tail = new Node(i);
+			this.head = this.tail = new Node(payload);
 		else {
-			this.tail.next = new Node(i);
-			this.tail = this.tail.next;
-		}	
+			this.head = new Node(payload, this.head);
+		}
 	}
+	
+	public void addToTail(int payload) {
+		if(this.isEmpty())
+			this.head = this.tail = new Node(payload);
+		else {
+			this.tail.next = new Node(payload);
+			this.tail = this.tail.next;
+		}
+	}
+	
 	public Integer deleteFromHead() {
 		if(this.isEmpty())
 			return null;
 		else {
-			Integer retvalue = this.head.info;
+			Node toDelete = this.head;
+			Integer toReturn = this.head.payload;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
-			else {
-				Node toDelete = this.head;
+			else 
 				this.head = this.head.next;
-				toDelete = null;
-			}
-			return retvalue;
+			toDelete = null;
+			return toReturn;
 		}
 	}
+	
 	public Integer deleteFromTail() {
 		if(this.isEmpty())
 			return null;
 		else {
-			Integer retvalue = this.tail.info;
+			Node toDelete = this.tail;
+			Integer toReturn = this.tail.payload;
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
 				Node tmp;
 				for(tmp = this.head; tmp.next != this.tail; tmp = tmp.next);
-				Node toDelete = this.tail;
-				tmp.next = null;
 				this.tail = tmp;
-				toDelete = null;
+				this.tail.next = null;
 			}
-			return retvalue;
+			toDelete = null;
+			return toReturn;
 		}
 	}
-	public void deleteNodesWithValue(int val) {
-		if(this.isEmpty())
+	
+	public Integer deleteNodesWithValue(int value) {
+		Integer toReturn = null;
+		if(this.isEmpty()) {
 			System.out.println("List is empty");
-		else if(this.head != this.tail) {
+		}
+		else {
 			Node currentNode = this.head;
-			while(currentNode.next != null) /* NOT currentNode != this.tail, tail can be null */
-				if(currentNode.next.info == val) {
+			while(currentNode.next != null) {
+				if(currentNode.next.payload == value) {
+					toReturn = currentNode.next.payload;
 					Node toDelete = currentNode.next;
 					if(currentNode.next.next == null)
 						currentNode.next = null;
@@ -81,41 +93,18 @@ public class List {
 				}
 				else
 					currentNode = currentNode.next;
-			this.tail = currentNode;				
-		}
-		if(this.head.info == val)
-			this.deleteFromHead();
-	}
-	public Integer deleteWithValue(int value) {
-		Integer retValue = null;
-		if(this.isEmpty())
-			return null;
-		Node current = this.head;
-		while(current.next != null) {
-			if(current.next.info == value) {
-				retValue = current.next.info;
-				if(current.next.next == null)
-					current.next = null;
-				else
-					current.next = current.next.next;
 			}
-			else
-				current = current.next;
+			this.tail = currentNode;
 		}
-		this.tail = current;
-		if(this.head.info == value) {
-			retValue = this.head.info;
-			this.deleteFromHead();
-		}
-		return retValue;
+		if(this.head.payload == value)
+			toReturn = this.deleteFromHead();
+		return toReturn;
 	}
+	
 	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
-		if(this.isEmpty())
-			System.out.println("List is empty");
-		else if(index < 0 || index > size - 1){
-			System.out.println("Index out of bounds");
-		}
+		if(index < 0 || index >= size)
+			System.out.println("Index out of range");
 		else {
 			if(index == 0)
 				this.deleteFromHead();
@@ -123,57 +112,59 @@ public class List {
 				this.deleteFromTail();
 			else {
 				int count = 0;
-				Node prev = null, tmp = this.head;
+				Node prev = null, curr = this.head;
 				while(count < index) {
+					prev = curr;
+					curr = curr.next;
 					count++;
-					prev = tmp;
-					tmp = tmp.next;
 				}
-				prev.next = tmp.next;
-				tmp = null;
+				prev.next = curr.next;
+				curr = null;
 			}
 		}
 	}
-	public void sort() {
-		boolean swapped;
-		do {
-			swapped = false;
-			for(Node tmp = this.head; tmp.next != null; tmp = tmp.next) {
-				if(tmp.info > tmp.next.info) {
-					int storage = tmp.info;
-					tmp.info = tmp.next.info;
-					tmp.next.info = storage;
-					swapped = true;
-				}
-			}
-			
-		}while(swapped);
-	}
-	public void insertAfter(int listElement, int newElement) {
+	
+	public void insertAfter(int listValue, int newValue) {
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.info == listElement) {
+			if(tmp.payload == listValue) {
 				if(tmp == this.tail)
-					this.addToTail(newElement);
+					this.addToTail(newValue);
 				else {
-					Node newNode = new Node(newElement, tmp.next);
-					tmp.next = newNode;
+					tmp.next = new Node(newValue, tmp.next);
 				}
 				tmp = tmp.next;
 			}
 		}
 	}
-	public void insertBefore(int listElement, int newElement) {
+	
+	public void insertBefore(int listValue, int newValue) {
 		Node prev = null;
 		for(Node tmp = this.head; tmp != null; tmp = tmp.next) {
-			if(tmp.info == listElement) {
-				if(tmp == this.head)
-					this.addToHead(newElement);
+			if(tmp.payload == listValue) {
+				if(tmp == this.head) {
+					this.addToHead(newValue);
+				}
 				else {
-					Node newNode = new Node(newElement, tmp);
-					prev.next = newNode;
+					prev.next = new Node(newValue, tmp);
 				}
 			}
 			prev = tmp;
 		}
 	}
+	
+	public void sort() {
+		boolean swapped = true;
+		do{
+			swapped = false;
+			for(Node tmp = this.head; tmp != this.tail; tmp = tmp.next) {
+				if(tmp.payload > tmp.next.payload) {
+					int storage = tmp.payload;
+					tmp.payload = tmp.next.payload;
+					tmp.next.payload = storage;
+					swapped = true;
+				}
+			}
+		}while(swapped);
+	}
+	
 }
