@@ -90,57 +90,29 @@ public class List {
 			return toReturn;
 		}
 	}
-	public void deleteNodesWithValue(int value) {
-		if(this.isEmpty())
-			System.out.println();
-		else {
-			Node tmp = this.head;
-			while(tmp.next != this.head) {
-				if(tmp.next.info == value) {
-					if(tmp.next.next == this.head) {
-						tmp.next = this.head;
-						this.head.prev = tmp;
-					}
-					else
-						tmp.next = tmp.next.next;
-				}
-			}
-			this.tail = tmp;
-			this.tail.next = this.head;
-			this.head.prev = this.tail;
+	public Integer deleteNodesWithValue(int value) {
+		Integer toReturn = null;
+		if(this.isEmpty()) {
+			System.out.println("List is empty");
 		}
-		if(this.head.info == value)
-			this.deleteFromHead();
-	}
-	public Integer deleteWithValue(int value) {
-		Integer retValue = null;
-		if(this.isEmpty())
-			return null;
-		Node current = this.head;
-		while(current.next != this.head) {
-			if(current.next.info == value) {
-				retValue = current.next.info;
-				if(current.next.next == this.head) {
-					current.next = this.head;
-					this.head.prev = current;
-				}
-				else {
+		else {
+			Node current = this.head;
+			while(current.next != this.head) {
+				if(current.next.payload == value) {
+					toReturn = current.next.payload;
 					current.next = current.next.next;
 					current.next.prev = current;
 				}
+				else
+					current = current.next;
 			}
-			else {
-				current = current.next;
-			}
+			this.tail = current;
+			this.tail.next = this.head;
+			this.head.prev = this.tail;
 		}
-		this.tail = current;
-		this.tail.next = this.head;
-		this.head.prev = this.tail;
-		if(this.head.info == value) {
-			retValue = this.head.payload;
-			this.deleteFromHead();
-		}
-		return retValue;
+		if(this.head.payload == value)
+			toReturn = this.deleteFromHead();
+		return toReturn;
 	}
 	
 	public void deleteOnIndex(int index) {
