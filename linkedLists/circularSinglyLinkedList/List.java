@@ -100,8 +100,8 @@ public class List {
             if(this.head.payload == value){
                 retValue = this.deleteFromHead();
             }
-            return retValue;
         }
+        return retValue;
     }
 
     public void deleteOnIndex(int index){
