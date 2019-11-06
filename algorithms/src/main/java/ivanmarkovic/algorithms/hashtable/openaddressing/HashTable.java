@@ -1,4 +1,4 @@
-package ivanmarkovic.algorithms.hashtable.openadressing;
+package ivanmarkovic.algorithms.hashtable.openaddressing;
 
 public interface HashTable<K extends Number, V> {
 
