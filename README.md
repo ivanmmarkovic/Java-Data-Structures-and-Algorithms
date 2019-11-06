@@ -1,8 +1,8 @@
 # Java - Data structures and Algorithms
 
 
-### [Hash Table - open adressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openadressing)
+#### [Hash Table - open addressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openaddressing)
 
-### [Hash Table chaining](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/chaining)
+#### [Hash Table chaining](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/chaining)
 
-### [BinaryTree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarytree)
+#### [BinaryTree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarytree)
