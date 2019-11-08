@@ -1,4 +1,4 @@
-# Java - Data structures and Algorithms
+# Java - Data structures and Algorithms 
 
 #### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
