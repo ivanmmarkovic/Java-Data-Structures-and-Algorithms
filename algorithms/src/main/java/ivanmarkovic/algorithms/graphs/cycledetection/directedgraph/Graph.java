@@ -53,12 +53,12 @@ public class Graph {
 			this.distance.put(start, this.distance.get(prev) + 1);
 		}
 		for(String neighbour: this.adjacencyList.get(start)) {
-			if(this.colors.get(neighbour).equals("white")) {
-				this.dfs(neighbour, start);
-			}
 			if(this.colors.get(neighbour).equals("gray")) {
 				System.out.println("CYCLE DETECTED");
 				return;
+			}
+			if(this.colors.get(neighbour).equals("white")) {
+				this.dfs(neighbour, start);
 			}
 		}
 		this.colors.put(start, "black");
