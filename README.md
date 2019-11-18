@@ -15,3 +15,5 @@
 #### [Breadth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/breadthfirstsearch)
 
 #### [Depth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearch)
+
+#### [Depth First Search Recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearchrecursive)
