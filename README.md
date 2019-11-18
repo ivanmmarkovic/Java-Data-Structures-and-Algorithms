@@ -22,5 +22,7 @@
 
 #### [Topological Sorting](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/topologicalsorting)
 
+#### [Cycle detection - directed graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/directedgraph)
 
+#### [Cycle detection - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/undirectedgraph)
 
