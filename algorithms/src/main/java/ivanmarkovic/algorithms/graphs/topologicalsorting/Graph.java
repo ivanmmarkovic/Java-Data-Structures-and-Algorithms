@@ -34,7 +34,6 @@ public class Graph {
 	
 	public void addEdge(String label1, String label2) {
 		this.adjacencyList.get(label1).add(label2);
-		this.adjacencyList.get(label2).add(label1);
 	}
 	
 	public void topSort() {
