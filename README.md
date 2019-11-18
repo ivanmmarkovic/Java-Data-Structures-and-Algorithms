@@ -20,5 +20,7 @@
 
 #### [Test for connectivity - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/connectivity/undirectedgraphs)
 
+#### [Topological Sorting](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/topologicalsorting)
+
 
 
