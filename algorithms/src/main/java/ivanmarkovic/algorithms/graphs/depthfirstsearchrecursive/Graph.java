@@ -1,4 +1,4 @@
-package ivanmarkovic.algorithms.graphs.depthfirstsearch;
+package ivanmarkovic.algorithms.graphs.depthfirstsearchrecursive;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,46 +46,19 @@ public class Graph {
 		this.adjacencyList.get(label2).add(label1);
 	}
 	
-	public void dfs(String start) {
-		Stack<String> stack = new Stack<String>();
-		stack.push(start);
+	public void dfs(String start, String prev) {
+		this.previous.put(start, prev);
 		this.colors.put(start, "gray");
 		this.entry.put(start, ++this.time);
-		String tmp;
-		String neighbour;
-		while (!stack.isEmpty()) {
-			tmp = stack.peek();
-			neighbour = this.findUnvisitedNeighbour(tmp);
-			if(neighbour != null) {
-				this.previous.put(neighbour, tmp);
-				this.colors.put(neighbour, "gray");
-				this.entry.put(neighbour, ++this.time);
-				this.distance.put(neighbour, this.distance.get(tmp) + 1);
-				stack.push(neighbour);
-			}
-			else {
-				stack.pop();
-				this.colors.put(tmp, "black");
-				this.exit.put(tmp, ++this.time);
+		if(prev != null)
+			this.distance.put(start, this.distance.get(prev) + 1);
+		for(String neighbour: this.adjacencyList.get(start)) {
+			if(this.colors.get(neighbour).equals("white")) {
+				this.dfs(neighbour, start);
 			}
 		}
-	}
-	
-	private String findUnvisitedNeighbour(String label) {
-		boolean found = false;
-		int count = 0;
-		String neighbour = null;
-		while (count < this.adjacencyList.get(label).size() && !found) {
-			neighbour = this.adjacencyList.get(label).get(count);
-			if(this.colors.get(neighbour).equals("white"))
-				found = true;
-			else
-				count++;
-		}
-		if(found)
-			return neighbour;
-		else
-			return null;
+		this.colors.put(start, "black");
+		this.exit.put(start, ++this.time);
 	}
 	
 	public String getPath(String end) {
