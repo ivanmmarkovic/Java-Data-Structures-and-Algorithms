@@ -3,6 +3,7 @@ package ivanmarkovic.algorithms.graphs.dijkstra;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Graph {
 	
@@ -35,6 +36,32 @@ public class Graph {
 		this.adjacencyList.get(label1).add(vertex);
 	}
 	
+	public void dijkstra(String label) {
+		int index = this.getIndexByLabel(label);
+		this.vertices[index].setWeight(0);
+		BinaryHeap pq = new BinaryHeap(this.size);
+		for(int i = 0; i < this.pointer; i++)
+			pq.insert(this.vertices[i]);
+		Vertex current;
+		while(!pq.isEmpty()) {
+			current = pq.deleteMin();
+			for(Vertex vertex: this.adjacencyList.get(current.getLabel())) {
+				if(current.getWeight() + vertex.getWeight() < this.vertices[vertex.getIndex()].getWeight()) {
+					this.vertices[vertex.getIndex()].setWeight(current.getWeight() + vertex.getWeight());
+					this.previous.put(this.vertices[vertex.getIndex()].getLabel(), current.getLabel());
+					pq.decreaseKey(this.vertices[vertex.getIndex()].getKey());
+				}
+			}
+		}
+	}
+	
+	public String getPath(String label) {
+		if(this.previous.get(label) == null)
+			return label;
+		else
+			return this.getPath(this.previous.get(label)) + " -> " + label;
+	}
+	
 	public Integer getIndexByLabel(String label) {
 		boolean found = false;
 		int count = 0;
@@ -47,7 +74,7 @@ public class Graph {
 		if(found)
 			return count;
 		else
-			return null;
+			throw new NoSuchElementException();
 	}
 	
 

@@ -1,5 +1,7 @@
 package ivanmarkovic.algorithms.graphs.dijkstra;
 
+import java.util.NoSuchElementException;
+
 public class BinaryHeap {
 	
 	private int pointer;
@@ -39,9 +41,20 @@ public class BinaryHeap {
 		}
 	}
 	
+	public void decreaseKey(int key) {
+		this.percUp(key);
+	}
+	
+	public Vertex getMin() {
+		if(this.isEmpty())
+			throw new NoSuchElementException();
+		else
+			return this.heap[1];
+	}
+	
 	public Vertex deleteMin() {
 		if(this.isEmpty())
-			return null;
+			throw new NoSuchElementException();
 		
 		Vertex toDelete = this.heap[1];
 		if(this.pointer == 1) {
@@ -66,6 +79,7 @@ public class BinaryHeap {
 				this.heap[index].setKey(index);
 				this.heap[minIndex].setKey(minIndex);
 			}
+			index = minIndex;
 		}
 	}
 	
