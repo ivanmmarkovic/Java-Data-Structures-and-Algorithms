@@ -26,3 +26,7 @@
 
 #### [Cycle detection - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/undirectedgraph)
 
+#### [Dijkstra algorithm](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstra)
+
+#### [Prim's algorithm - minimum spanning tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/prim)
+
