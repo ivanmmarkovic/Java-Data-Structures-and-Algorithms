@@ -46,20 +46,17 @@ public class Graph {
 		this.adjacencyList.get(label2).add(label1);
 	}
 	
-	public void dfs(String start, String prev) {
-		this.previous.put(start, prev);
+	public void dfs(String start) {
 		this.colors.put(start, "gray");
 		this.entry.put(start, ++this.time);
-		if(prev != null) {
-			this.distance.put(start, this.distance.get(prev) + 1);
-		}
 		for(String neighbour: this.adjacencyList.get(start)) {
 			if(this.colors.get(neighbour).equals("gray") && !this.previous.get(start).equals(neighbour)) {
 				System.out.println("CYCLE DETECTED");
 				return;
 			}
 			if(this.colors.get(neighbour).equals("white")) {
-				this.dfs(neighbour, start);
+				this.previous.put(neighbour, start);
+				this.dfs(neighbour);
 			}
 		}
 		this.colors.put(start, "black");
