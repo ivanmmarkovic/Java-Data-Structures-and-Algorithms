@@ -21,7 +21,7 @@ public class Main {
 		graph.addEdge("B", "F");
 		graph.addEdge("E", "I");
 
-		graph.dfs("A", null);
+		graph.dfs("A");
 		System.out.println(graph.getPath("H"));	
 
 	}
