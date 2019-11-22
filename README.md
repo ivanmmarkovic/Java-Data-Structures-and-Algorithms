@@ -2,7 +2,7 @@
 
 #### [Stack - array implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/arrayimplementation)
 
-#### [stack - linked list implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/linkedlistimplementation)
+#### [Stack - linked list implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/linkedlistimplementation)
 
 #### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
