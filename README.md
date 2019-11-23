@@ -1,44 +1,44 @@
 # Java - Data structures and Algorithms 
 
-#### [Stack - array implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/arrayimplementation)
+- ##### [Stack - array implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/arrayimplementation)
 
-#### [Stack - linked list implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/linkedlistimplementation)
+- ##### [Stack - linked list implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/stack/linkedlistimplementation)
 
-#### [Queue - array implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/arrayimplementation)
+- ##### [Queue - array implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/arrayimplementation)
 
-#### [Queue - 2 stacks implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/stacksimplementation)
+- ##### [Queue - 2 stacks implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/stacksimplementation)
 
-#### [Circular Queue](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/circularqueue)
+- ##### [Circular Queue](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/circularqueue)
 
-#### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
+- ##### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
-#### [Hash Table - open addressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openaddressing)
+- ##### [Hash Table - open addressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openaddressing)
 
-#### [Hash Table - chaining](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/chaining)
+- ##### [Hash Table - chaining](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/chaining)
 
-#### [Binary Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarytree)
+- ##### [Binary Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarytree)
 
-#### [Binary Search Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarysearchtree)
+- ##### [Binary Search Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarysearchtree)
 
-#### [AVL Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/avltree)
+- ##### [AVL Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/avltree)
 
-#### [Breadth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/breadthfirstsearch)
+- ##### [Breadth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/breadthfirstsearch)
 
-#### [Depth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearch)
+- ##### [Depth First Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearch)
 
-#### [Depth First Search Recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearchrecursive)
+- ##### [Depth First Search Recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/depthfirstsearchrecursive)
 
-#### [Test for connectivity - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/connectivity/undirectedgraphs)
+- ##### [Test for connectivity - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/connectivity/undirectedgraphs)
 
-#### [Topological Sorting](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/topologicalsorting)
+- ##### [Topological Sorting](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/topologicalsorting)
 
-#### [Cycle detection - directed graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/directedgraph)
+- ##### [Cycle detection - directed graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/directedgraph)
 
-#### [Cycle detection - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/undirectedgraph)
+- ##### [Cycle detection - undirected graph](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/cycledetection/undirectedgraph)
 
-#### [Dijkstra algorithm](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstra)
+- ##### [Dijkstra algorithm](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstra)
 
-#### [Dijkstra algorithm - dense graphs](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstradensegraph)
+- ##### [Dijkstra algorithm - dense graphs](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstradensegraph)
 
-#### [Prim's algorithm - minimum spanning tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/prim)
+- ##### [Prim's algorithm - minimum spanning tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/prim)
 
