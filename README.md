@@ -18,6 +18,12 @@
 
 - ##### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
+#### Linked Lists 
+
+- ##### Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/singlylinkedlists)
+
+- ##### Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/doublylinkedlist)
+
 #### Hash Table
 
 - ##### [Hash Table - open addressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openaddressing)
