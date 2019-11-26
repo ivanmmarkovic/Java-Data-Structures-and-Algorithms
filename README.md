@@ -24,6 +24,10 @@
 
 - ##### [Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/doublylinkedlist)
 
+- ##### [Circular Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circularsinglylinkedlist)
+
+- ##### [Circular Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circulardoublylinkedlist)
+
 #### Hash Table
 
 - ##### [Hash Table - open addressing](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/openaddressing)
