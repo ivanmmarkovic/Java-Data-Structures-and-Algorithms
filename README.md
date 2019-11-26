@@ -14,6 +14,8 @@
 
 - ##### [Circular Queue](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/circularqueue)
 
+- ##### [Queue - Linked List implementation](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/queue/linkedlistimplementation)
+
 #### Priority Queue - Binary Heap
 
 - ##### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
