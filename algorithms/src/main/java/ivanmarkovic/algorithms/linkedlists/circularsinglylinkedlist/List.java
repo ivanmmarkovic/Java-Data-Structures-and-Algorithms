@@ -119,6 +119,27 @@ public class List {
 		}
 	}
 	
+	public void deleteOnIndex(int index) {
+		int size = this.numberOfElements();
+		if(index < 0 || index >= size)
+			return;
+		if(index == 0)
+			this.deleteFromHead();
+		else if(index == size - 1)
+			this.deleteFromTail();
+		else {
+			int count = 0;
+			Node prev = null;
+			Node current = this.head;
+			while(count < index) {
+				count++;
+				prev = current;
+				current = current.next;
+			}
+			prev.next = current.next;
+		}
+	}
+	
 	public void insertAfter(int listElement, int newElement) {
 		if(this.isEmpty())
 			return;
