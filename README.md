@@ -32,6 +32,16 @@
 
 - ##### [Short Bubble](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/ShortBubble.java)
 
+#### Searching
+
+- ##### [Linear Search Unordered List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/LinearSearchUnorderedList.java)
+
+- ##### [Linear Search Ordered List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/LinearSearchOrderedList.java)
+
+- ##### [Binary Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/BinarySearch.java)
+
+- ##### [Binary Search Recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/BinarySearchRecursive.java)
+
 #### Linked Lists 
 
 - ##### [Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/singlylinkedlists)
