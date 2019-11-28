@@ -20,6 +20,18 @@
 
 - ##### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
+#### Sorting
+
+- ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
+
+- ##### [Insertion Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/InsertionSort.java)
+
+- ##### [QuickSort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/QuickSort.java)
+
+- ##### [Selection Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/SelectionSort.java)
+
+- ##### [Short Bubble](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/ShortBubble.java)
+
 #### Linked Lists 
 
 - ##### [Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/singlylinkedlists)
