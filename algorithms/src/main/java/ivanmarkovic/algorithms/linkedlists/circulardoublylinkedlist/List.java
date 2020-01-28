@@ -90,9 +90,7 @@ public class List {
 			if(this.head == this.tail)
 				this.head = this.tail = null;
 			else {
-				Node current;
-				for(current = this.head; current.next != this.tail; current = current.next);
-				this.tail = current;
+				this.tail = this.tail.prev;
 				this.tail.next = this.head;
 				this.head.prev = this.tail;
 			}
