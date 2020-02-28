@@ -57,6 +57,7 @@ public class List {
 	public void addToTail(int payload) {
 		if(this.isEmpty()) {
 			this.head = this.tail = new Node(payload);
+			this.head.prev = this.tail;
 			this.tail.next = this.head;
 		}
 		else {
