@@ -99,6 +99,10 @@ public class BinarySearchTree {
 		else
 			return this.root.contains(key);
 	}
+	
+	public int size() {
+		return this.length;
+	}
 
 }
 
