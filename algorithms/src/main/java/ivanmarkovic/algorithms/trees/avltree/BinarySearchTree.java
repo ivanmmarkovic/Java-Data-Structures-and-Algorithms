@@ -27,14 +27,18 @@ public class BinarySearchTree {
 		else if(node.key > key) {
 			if(node.hasLeftChild())
 				this.put(node.leftChild, key);
-			else
+			else {
 				node.leftChild = new TreeNode(key);
+				this.update(node);
+			}
 		}
 		else {
 			if(node.hasRightChild())
 				this.put(node.rightChild, key);
-			else
+			else {
 				node.rightChild = new TreeNode(key);
+				this.update(node);
+			}
 		}
 	}
 	
@@ -73,7 +77,7 @@ public class BinarySearchTree {
 				TreeNode tmp = this.root.leftChild.findMax();
 				int tmpKey = tmp.key;
 				this.delete(tmpKey);
-				this.root.key = tmpKey;
+				toDelete.key = tmpKey;
 			}
 			else {
 				this.length--;
@@ -88,12 +92,14 @@ public class BinarySearchTree {
 			}
 		}
 		else {
+			TreeNode parent = toDelete.parent;
 			if(toDelete.isLeaf()) {
 				this.length--;
 				if(toDelete.isLeftChild()) 
 					toDelete.parent.leftChild = null;
 				else
 					toDelete.parent.rightChild = null;
+				this.update(parent);
 			}
 			else if(toDelete.hasBothChildren()) {
 				TreeNode tmp = toDelete.leftChild.findMax();
@@ -123,6 +129,7 @@ public class BinarySearchTree {
 						toDelete.rightChild.parent = toDelete.parent;
 					}
 				}
+				this.update(parent);
 			}
 		}
 	}
@@ -151,5 +158,79 @@ public class BinarySearchTree {
 		return this.length;
 	}
 
+	private void update(TreeNode node) {
+		int oldbalanceFactor = node.balanceFactor;
+		if(node.hasLeftChild())
+			node.leftSubtreeHeight = Math.max(node.leftChild.leftSubtreeHeight, node.leftChild.rightSubtreeHeight) + 1;
+		else
+			node.leftSubtreeHeight = 0;
+		if(node.hasRightChild())
+			node.rightSubtreeHeight = Math.max(node.rightChild.leftSubtreeHeight, node.rightChild.rightSubtreeHeight) + 1;
+		else
+			node.rightSubtreeHeight = 0;
+		node.balanceFactor = node.leftSubtreeHeight - node.rightSubtreeHeight;
+		if(node.balanceFactor < -1 || node.balanceFactor > 1) {
+			this.rebalance(node);
+			return;
+		}
+		if(oldbalanceFactor != node.balanceFactor && node.hasParent())
+			update(node.parent);
+		
+	}
+	
+	private void rebalance(TreeNode node) {
+		if(node.balanceFactor < 0) {
+			if(node.rightChild.balanceFactor > 0)
+				this.rotateRight(node.rightChild);
+			else
+				this.rotateLeft(node);
+		}
+		else {
+			if(node.leftChild.balanceFactor < 0)
+				this.rotateLeft(node.leftChild);
+			else
+				this.rotateRight(node);
+		}
+	}
+	
+	private void rotateLeft(TreeNode node) {
+		TreeNode oldRoot = node;
+		TreeNode newRoot = node.rightChild;
+		oldRoot.rightChild = newRoot.leftChild;
+		if(newRoot.hasLeftChild()) 
+			newRoot.leftChild.parent = oldRoot;
+		newRoot.parent = oldRoot.parent;
+		if(oldRoot.hasParent()) {
+			if(oldRoot.isLeftChild()) 
+				oldRoot.parent.leftChild = newRoot;
+			else
+				oldRoot.parent.rightChild = newRoot;
+		}
+		else
+			this.root = newRoot;
+		oldRoot.parent = newRoot;
+		newRoot.leftChild = oldRoot;
+		this.update(oldRoot);
+	}
+	
+	private void rotateRight(TreeNode node){
+		TreeNode oldRoot = node;
+		TreeNode newRoot = node.rightChild;
+		oldRoot.leftChild = newRoot.rightChild;
+		if(newRoot.hasRightChild()) 
+			newRoot.rightChild.parent = oldRoot;
+		newRoot.parent = oldRoot.parent;
+		if(oldRoot.hasParent()) {
+			if(oldRoot.isLeftChild()) 
+				oldRoot.parent.leftChild = newRoot;
+			else
+				oldRoot.parent.rightChild = newRoot;
+		}
+		else
+			this.root = newRoot;
+		oldRoot.parent = newRoot;
+		newRoot.rightChild = oldRoot;
+		this.update(oldRoot);
+	}
 }
 
