@@ -60,8 +60,6 @@
 
 #### Trees
 
-- ##### [Binary Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarytree)
-
 - ##### [Binary Search Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarysearchtree)
 
 - ##### [AVL Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/avltree)
