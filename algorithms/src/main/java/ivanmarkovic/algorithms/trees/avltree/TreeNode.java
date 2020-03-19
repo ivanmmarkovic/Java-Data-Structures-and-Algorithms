@@ -1,19 +1,24 @@
-package ivanmarkovic.algorithms.trees.binarysearchtree;
+package ivanmarkovic.algorithms.trees.avltree;
+
+
+import java.util.NoSuchElementException;
 
 public class TreeNode {
 	
 	TreeNode parent, leftChild, rightChild;
-	int key;
+	int key, leftSubtreeHeight, rightSubtreeHeight, balanceFactor;
 	
 	public TreeNode() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public TreeNode(int key) {
+		this();
 		this.key = key;
 	}
 	
 	public TreeNode(int key, TreeNode parent){
+		this();
 		this.key = key;
 		this.parent = parent;
 	}
@@ -59,5 +64,6 @@ public class TreeNode {
 		else
 			return this;
 	}
+
 }
 

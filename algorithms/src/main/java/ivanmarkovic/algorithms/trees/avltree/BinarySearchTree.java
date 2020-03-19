@@ -1,4 +1,5 @@
-package ivanmarkovic.algorithms.trees.binarysearchtree;
+package ivanmarkovic.algorithms.trees.avltree;
+
 
 import java.util.NoSuchElementException;
 
