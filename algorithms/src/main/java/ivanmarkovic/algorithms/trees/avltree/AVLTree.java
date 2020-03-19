@@ -3,12 +3,12 @@ package ivanmarkovic.algorithms.trees.avltree;
 
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree {
+public class AVLTree {
 	
 	TreeNode root;
 	int length;
 	
-	public BinarySearchTree() {
+	public AVLTree() {
 		this.length = 0;
 	}
 	
