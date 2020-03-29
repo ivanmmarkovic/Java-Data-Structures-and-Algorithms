@@ -32,6 +32,8 @@
 
 - ##### [Short Bubble](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/ShortBubble.java)
 
+- ##### [Merge Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/MergeSort.java)
+
 #### Searching
 
 - ##### [Linear Search Unordered List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/LinearSearchUnorderedList.java)
