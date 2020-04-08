@@ -36,6 +36,7 @@ public class List {
 			Node current = this.head;
 			do {
 				System.out.print(current.payload + ", ");
+				current = current.next;
 			} while (current != this.head);
 		}
 		System.out.println();
