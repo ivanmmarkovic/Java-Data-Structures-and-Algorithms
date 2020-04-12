@@ -60,6 +60,10 @@
 
 - ##### [Hash Table - chaining](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/hashtable/chaining)
 
+#### Trie
+
+- #### [Trie](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trie)
+
 #### Trees
 
 - ##### [Binary Search Tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/trees/binarysearchtree)
