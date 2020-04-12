@@ -60,7 +60,7 @@ public class Trie {
 		return words;
 	}
     
-    public void helper(TrieNode node, StringBuilder sb, List<String> words) {
+    private void helper(TrieNode node, StringBuilder sb, List<String> words) {
 		if(node == null)
 			return;
 		if(node.key != null)
@@ -115,4 +115,20 @@ public class Trie {
 			parent = current.parent;
 		}
 	}
+    
+    public int countWords() {
+		return this.countWordsHelper(this.root);
+	}
+    
+    private int countWordsHelper(TrieNode node) {
+    	if(node == null)
+    		return 0;
+    	int count = 0;
+    	if(node.terminating)
+    		count += 1;
+    	for(Character c: node.children.keySet()) {
+    		count += this.countWordsHelper(node.children.get(c));
+    	}
+    	return count;
+    }
 }

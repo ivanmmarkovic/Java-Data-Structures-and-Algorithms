@@ -17,8 +17,11 @@ public class App
         System.out.println("All words with prefix 'ca' : " + trie.allWordsWithPrefix("ca"));
         System.out.println("All words with prefix 'java' : " + trie.allWordsWithPrefix("java"));
         
+        
+        System.out.println("Words count : " + trie.countWords());
         trie.remove("javascr");
         System.out.println("All words with prefix 'java' : " + trie.allWordsWithPrefix("java"));
+        System.out.println("Words count : " + trie.countWords());
         
     }
 }
