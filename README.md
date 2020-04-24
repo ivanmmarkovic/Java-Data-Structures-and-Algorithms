@@ -90,5 +90,7 @@
 
 - ##### [Dijkstra algorithm - dense graphs](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstradensegraph)
 
+- ##### [Dijkstra algorithm - HashMap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/dijkstrahashmap)
+
 - ##### [Prim's algorithm - minimum spanning tree](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/graphs/prim)
 
