@@ -31,6 +31,17 @@
 
 - ##### [Circular Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circulardoublylinkedlist)
 
+
+#### Recursion
+
+- #### [Convert number iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberIterative.java)
+
+- ### [Convert number recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberRecursive.java)
+
+- #### [Factorial](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Factorial.java)
+
+- #### []()
+
 #### Sorting
 
 - ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
