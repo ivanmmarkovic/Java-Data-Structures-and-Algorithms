@@ -20,6 +20,17 @@
 
 - ##### [Binary Heap - Min heap](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/binaryheap)
 
+
+#### Linked Lists 
+
+- ##### [Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/singlylinkedlists)
+
+- ##### [Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/doublylinkedlist)
+
+- ##### [Circular Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circularsinglylinkedlist)
+
+- ##### [Circular Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circulardoublylinkedlist)
+
 #### Sorting
 
 - ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
@@ -43,16 +54,6 @@
 - ##### [Binary Search](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/BinarySearch.java)
 
 - ##### [Binary Search Recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/searching/BinarySearchRecursive.java)
-
-#### Linked Lists 
-
-- ##### [Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/singlylinkedlists)
-
-- ##### [Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/doublylinkedlist)
-
-- ##### [Circular Singly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circularsinglylinkedlist)
-
-- ##### [Circular Doubly Linked List](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/tree/master/algorithms/src/main/java/ivanmarkovic/algorithms/linkedlists/circulardoublylinkedlist)
 
 #### Hash Table
 
