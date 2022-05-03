@@ -52,6 +52,13 @@
 
 - #### [Fibonacci sum iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumIterative.java)
 
+- #### [Maze - path finder](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Maze.java)
+
+- #### [Palindrome iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeIterative.java)
+
+- #### [Palindrome recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeRecursive.java)
+
+
 #### Sorting
 
 - ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
