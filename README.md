@@ -58,6 +58,13 @@
 
 - #### [Palindrome recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeRecursive.java)
 
+- #### [Reverse array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseArray.java)
+
+- #### [Reverse linked list iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterative.java)
+
+- #### [Reverse linked list iterative - stack](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterativeStack.java)
+
+- #### [Reverse linked list recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListRecursive.java)
 
 #### Sorting
 
