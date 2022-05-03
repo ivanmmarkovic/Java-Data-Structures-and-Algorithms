@@ -2,6 +2,10 @@ package ivanmarkovic.algorithms.recursion;
 
 public class ConvertNumberIterative {
 	
+	public static void main(String args[]) {
+		System.out.println(converter(1453, 16)); // 5AD
+	}
+	
 	public static String converter(int num, int base) {
 		String digits = "0123456789ABCDEF";
 		
