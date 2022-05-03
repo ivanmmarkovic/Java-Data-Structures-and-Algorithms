@@ -48,6 +48,10 @@
 
 - #### [Fibonacci iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciIterativeSolution.java)
 
+- #### [Fibonacci sum recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumRecursive.java)
+
+- #### [Fibonacci sum iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumIterative.java)
+
 #### Sorting
 
 - ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
