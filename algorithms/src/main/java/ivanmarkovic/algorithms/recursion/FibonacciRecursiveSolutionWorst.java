@@ -1,6 +1,6 @@
 package ivanmarkovic.algorithms.recursion;
 
-public class FibonacciWorstSolution {
+public class FibonacciRecursiveSolutionWorst {
 	
 	
 	public static void main(String args[]) {
