@@ -66,6 +66,12 @@
 
 - #### [Reverse linked list recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListRecursive.java)
 
+- #### [Reverse string](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseString.java)
+
+- #### [Sum numbers in array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArray.java)
+
+- #### [Sum numbers in array - binary recursion](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArrayBinaryRecursion.java)
+
 #### Sorting
 
 - ##### [Bubble Sort](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/sorting/BubbleSort.java)
