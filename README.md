@@ -34,45 +34,45 @@
 
 #### Recursion
 
-- #### [Convert number iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberIterative.java)
+- ##### [Convert number iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberIterative.java)
 
-- #### [Convert number recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberRecursive.java)
+- ##### [Convert number recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ConvertNumberRecursive.java)
 
-- #### [Factorial](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Factorial.java)
+- ##### [Factorial](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Factorial.java)
 
-- #### [Fibonacci bad recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciRecursiveSolutionWorst.java)
+- ##### [Fibonacci bad recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciRecursiveSolutionWorst.java)
 
-- #### [Fibonacci recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciRecursiveSolution.java)
+- ##### [Fibonacci recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciRecursiveSolution.java)
 
-- #### [Fibonacci memoization](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciMemoization.java)
+- ##### [Fibonacci memoization](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciMemoization.java)
 
-- #### [Fibonacci iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciIterativeSolution.java)
+- ##### [Fibonacci iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciIterativeSolution.java)
 
-- #### [Fibonacci sum recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumRecursive.java)
+- ##### [Fibonacci sum recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumRecursive.java)
 
-- #### [Fibonacci sum iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumIterative.java)
+- ##### [Fibonacci sum iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/FibonacciSumIterative.java)
 
-- #### [Maze - path finder](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Maze.java)
+- ##### [Maze - path finder](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/Maze.java)
 
-- #### [Palindrome iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeIterative.java)
+- ##### [Palindrome iterative solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeIterative.java)
 
-- #### [Palindrome recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeRecursive.java)
+- ##### [Palindrome recursive solution](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/PalindromeRecursive.java)
 
-- #### [Reverse array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseArray.java)
+- ##### [Reverse array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseArray.java)
 
-- #### [Reverse linked list iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterative.java)
+- ##### [Reverse linked list iterative](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterative.java)
 
-- #### [Reverse linked list iterative - stack](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterativeStack.java)
+- ##### [Reverse linked list iterative - stack](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListIterativeStack.java)
 
-- #### [Reverse linked list recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListRecursive.java)
+- ##### [Reverse linked list recursive](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseLinkedListRecursive.java)
 
-- #### [Reverse string](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseString.java)
+- ##### [Reverse string](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/ReverseString.java)
 
-- #### [Sum numbers in array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArray.java)
+- ##### [Sum numbers in array](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArray.java)
 
-- #### [Sum numbers in array - binary recursion](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArrayBinaryRecursion.java)
+- ##### [Sum numbers in array - binary recursion](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/SumNumbersInArrayBinaryRecursion.java)
 
-- #### [Towers of Hanoi](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/TowersOfHanoi.java)
+- ##### [Towers of Hanoi](https://github.com/ivanmmarkovic/Java-Data-Structures-and-Algorithms/blob/master/algorithms/src/main/java/ivanmarkovic/algorithms/recursion/TowersOfHanoi.java)
 
 #### Sorting
 
