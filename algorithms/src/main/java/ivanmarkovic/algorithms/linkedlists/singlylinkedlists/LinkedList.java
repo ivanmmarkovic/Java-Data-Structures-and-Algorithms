@@ -97,7 +97,7 @@ public class LinkedList {
 		}
 	}
 	
-	public void deleteOnOndex(int index) {
+	public void deleteOnIndex(int index) {
 		int size = this.numberOfElements();
 		if(index < 0 || index >= size)
 			return;
