@@ -42,31 +42,29 @@ public class List {
 		System.out.println();
 	}
 	
-	public void addToHead(int payload) {
-		if(this.isEmpty()) {
-			this.head = this.tail = new Node(payload);
-			this.head.prev = this.tail;
-			this.tail.next = this.head;
+	public void addToHead(int val){
+		if(this.isEmpty()){
+		    this.head = this.tail = new Node(val);
+		    this.head.prev = this.tail;
 		}
 		else {
-			this.head = new Node(payload, this.tail, this.head);
-			this.head.next.prev = this.head;
-			this.tail.next = this.head;
+		    this.head = new Node(val, this.tail, this.head);
+		    this.head.next.prev = this.head;
 		}
-	}
-	
-	public void addToTail(int payload) {
-		if(this.isEmpty()) {
-			this.head = this.tail = new Node(payload);
-			this.head.prev = this.tail;
-			this.tail.next = this.head;
-		}
-		else {
-			this.tail.next = new Node(payload, this.tail, this.head);
-			this.tail = this.tail.next;
-			this.head.prev = this.tail;
-		}
-	}
+		this.tail.next = this.head;
+	    }
+
+	    public void addToTail(int val){
+	        if(this.isEmpty()){
+	            this.head = this.tail = new Node(val);
+	            this.tail.next = this.head;
+	        }
+	        else {
+	            this.tail.next = new Node(val, this.tail, this.head);
+	            this.tail = this.tail.next;
+	        }
+	        this.head.prev = this.tail;
+	    }
 	
 	public Integer deleteFromHead() {
 		if(this.isEmpty())
