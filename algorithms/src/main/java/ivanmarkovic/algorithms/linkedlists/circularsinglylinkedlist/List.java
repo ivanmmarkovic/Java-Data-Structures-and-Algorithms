@@ -44,13 +44,12 @@ public class List {
 	
 	public void addToHead(int payload) {
 		if(this.isEmpty()) {
-			this.head = this.tail = new Node(payload);
-			this.tail.next = this.head;
+			this.head = this.tail = new Node(payload);	
 		}
 		else {
 			this.head = new Node(payload, this.head);
-			this.tail.next = this.head;
 		}
+		this.tail.next = this.head;
 	}
 	
 	public void addToTail(int payload) {
