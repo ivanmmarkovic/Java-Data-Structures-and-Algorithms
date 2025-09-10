@@ -94,29 +94,29 @@ public class List {
 			return retNode.payload;
 		}
 	}
-	
-	public Integer deleteNodesWithValue(int value) {
+
+	public void deleteNodesWithValue(int value) {
 		if(this.isEmpty())
 			throw new NoSuchElementException();
-		else {
-			Integer retValue = null;
-			Node current = this.head;
-			while (current.next != this.head) {
-				if(current.next.payload == value) {
-					retValue = current.next.payload;
-					current.next = current.next.next;
-				}
-				else
-					current = current.next;
-			}
-			this.tail = current;
-			if(this.head.payload == value)
-				retValue = this.deleteFromHead();
-			if(retValue == null)
-				throw new NoSuchElementException();
-			else
-				return retValue;
+		if(this.head == this.tail && this.head.payload == value) {
+			this.deleteFromHead();
+			return;
 		}
+		Node node = this.head;
+		while (true) {
+			if (node.next.payload == value) {
+				boolean toBreak = node.next == this.tail;
+				node.next = node.next.next;
+				if(toBreak)
+					break;
+			} else {
+				node = node.next;
+			}			
+		}
+		this.tail = node;
+		if (this.head.payload == value)
+			this.deleteFromHead();
+
 	}
 	
 	public void deleteOnIndex(int index) {
