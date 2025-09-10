@@ -98,8 +98,9 @@ public class List {
 	public void deleteNodesWithValue(int value) {
 		if(this.isEmpty())
 			throw new NoSuchElementException();
-		if(this.head == this.tail && this.head.payload == value) {
-			this.deleteFromHead();
+		if(this.head == this.tail) {
+			if(this.head.payload == value)
+				this.deleteFromHead();
 			return;
 		}
 		Node node = this.head;
